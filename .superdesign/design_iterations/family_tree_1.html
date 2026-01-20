@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Phả đồ Tộc Đặng Văn Non Nước - Dòng họ lớn tại Đà Nẵng với lịch sử hơn 500 năm">
+  <title>Tộc Đặng Văn Non Nước | Phả Đồ Gia Tộc</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- D3.js for Family Tree -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="theme_vietnamese_heritage.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'body': ['Source Sans 3', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            primary: {
+              50: '#fdf2f2',
+              100: '#fce4e4',
+              200: '#fababa',
+              300: '#f58a8a',
+              400: '#c44d4d',
+              500: '#8b2525',
+              600: '#731f1f',
+              700: '#5c1919',
+              800: '#4a1414',
+              900: '#3d1010',
+            },
+            secondary: {
+              50: '#fdfcf5',
+              100: '#faf6e6',
+              200: '#f5ecc7',
+              300: '#eddc9a',
+              400: '#e2c564',
+              500: '#d4af37',
+              600: '#b8952c',
+              700: '#967623',
+              800: '#785e1c',
+              900: '#5a4615',
+            },
+            accent: {
+              50: '#f0fdf6',
+              100: '#dbfce9',
+              200: '#baf7d5',
+              300: '#84f0b5',
+              400: '#48de89',
+              500: '#1fba5e',
+              600: '#149a4a',
+              700: '#14783e',
+              800: '#155f34',
+              900: '#134e2d',
+            },
+            warm: {
+              50: '#fdfcfa',
+              100: '#f9f6f1',
+              200: '#f2ebe0',
+              300: '#e8dcc9',
+              400: '#d4c4a8',
+              500: '#b8a383',
+              600: '#9a8467',
+              700: '#7d6a52',
+              800: '#665544',
+              900: '#544739',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ==========================================
+       CUSTOM STYLES & ANIMATIONS
+       ========================================== */
+
+    /* Base Overrides */
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Source Sans 3', system-ui, sans-serif !important;
+      background-color: #fdfcfa !important;
+      color: #544739 !important;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif !important;
+    }
+
+    /* ==========================================
+       HERO SECTION
+       ========================================== */
+
+    .hero-section {
+      background: linear-gradient(135deg, #4a1414 0%, #731f1f 40%, #5c1919 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.6;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 8vw, 5rem) !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.02em !important;
+      line-height: 1.1 !important;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .gold-shimmer {
+      background: linear-gradient(90deg, #e2c564 0%, #faf6e6 50%, #e2c564 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to { background-position: 200% center; }
+    }
+
+    /* Stats Cards */
+    .stat-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212,175,55,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: rgba(212,175,55,0.5);
+      transform: translateY(-4px);
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 2.5rem !important;
+      font-weight: 700 !important;
+      color: #d4af37 !important;
+    }
+
+    /* ==========================================
+       NAVIGATION
+       ========================================== */
+
+    .nav-link {
+      position: relative;
+      color: rgba(255,255,255,0.8);
+      transition: color 0.2s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #d4af37;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* ==========================================
+       FAMILY TREE AREA
+       ========================================== */
+
+    .tree-container {
+      background: #fff;
+      border: 1px solid #e8dcc9;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(84,71,57,0.08);
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tree-controls {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      background: rgba(255,255,255,0.95);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 1px solid #e8dcc9;
+      z-index: 10;
+    }
+
+    .tree-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid #d4c4a8;
+      background: #fff;
+      color: #7d6a52;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tree-btn:hover {
+      background: #8b2525;
+      border-color: #8b2525;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    /* Person Nodes */
+    .person-node {
+      background: #fff;
+      border: 2px solid #e8dcc9;
+      border-radius: 12px;
+      padding: 12px 16px;
+      min-width: 140px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .person-node::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gen-color, #8b2525);
+      border-radius: 10px 10px 0 0;
+    }
+
+    .person-node:hover {
+      border-color: #c44d4d;
+      box-shadow: 0 8px 25px rgba(139,37,37,0.15);
+      transform: scale(1.05);
+    }
+
+    .person-node.selected {
+      border-color: #d4af37;
+      box-shadow: 0 0 0 3px rgba(212,175,55,0.3), 0 8px 25px rgba(212,175,55,0.2);
+    }
+
+    .person-node.male {
+      border-left: 4px solid #1fba5e;
+    }
+
+    .person-node.female {
+      border-left: 4px solid #c44d4d;
+    }
+
+    .person-node.deceased {
+      opacity: 0.75;
+      background: #f9f6f1;
+    }
+
+    .person-name {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 0.95rem !important;
+      font-weight: 600 !important;
+      color: #3d1010 !important;
+      margin-bottom: 4px;
+    }
+
+    .person-gen {
+      font-size: 0.75rem;
+      color: #9a8467;
+      font-weight: 500;
+    }
+
+    /* Tree Lines */
+    .tree-line {
+      stroke: #d4c4a8;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .tree-line.highlighted {
+      stroke: #d4af37;
+      stroke-width: 3;
+      filter: drop-shadow(0 0 4px rgba(212,175,55,0.5));
+    }
+
+    /* ==========================================
+       SIDEBAR FILTERS
+       ========================================== */
+
+    .filter-sidebar {
+      background: #fff;
+      border: 1px solid #e8dcc9;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(84,71,57,0.08);
+    }
+
+    .filter-section {
+      border-bottom: 1px solid #f2ebe0;
+      padding: 16px;
+    }
+
+    .filter-section:last-child {
+      border-bottom: none;
+    }
+
+    .filter-title {
+      font-family: 'Source Sans 3', sans-serif !important;
+      font-size: 0.75rem !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      color: #9a8467 !important;
+      margin-bottom: 12px;
+    }
+
+    .filter-input {
+      width: 100%;
+      padding: 10px 14px;
+      padding-left: 40px;
+      border: 1px solid #e8dcc9;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      background: #fdfcfa;
+    }
+
+    .filter-input:focus {
+      outline: none;
+      border-color: #8b2525;
+      box-shadow: 0 0 0 3px rgba(139,37,37,0.1);
+    }
+
+    .filter-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border: 1px solid #e8dcc9;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #fff;
+      color: #7d6a52;
+    }
+
+    .filter-chip:hover {
+      border-color: #8b2525;
+      color: #8b2525;
+    }
+
+    .filter-chip.active {
+      background: #8b2525;
+      border-color: #8b2525;
+      color: #fff;
+    }
+
+    /* ==========================================
+       DETAIL PANEL
+       ========================================== */
+
+    .detail-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 420px;
+      height: 100vh;
+      background: #fff;
+      box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y: auto;
+    }
+
+    .detail-panel.open {
+      transform: translateX(0);
+    }
+
+    .detail-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(61,16,16,0.5);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .detail-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .detail-header {
+      background: linear-gradient(135deg, #5c1919 0%, #731f1f 100%);
+      padding: 24px;
+      color: #fff;
+      position: relative;
+    }
+
+    .detail-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .detail-close:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.1);
+    }
+
+    .detail-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid rgba(212,175,55,0.5);
+      background: #e8dcc9;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9a8467;
+    }
+
+    .detail-name {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 1.5rem !important;
+      font-weight: 700 !important;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .detail-subtitle {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .detail-content {
+      padding: 24px;
+    }
+
+    .detail-section {
+      margin-bottom: 24px;
+    }
+
+    .detail-section-title {
+      font-size: 0.75rem !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      color: #9a8467 !important;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #f2ebe0;
+    }
+
+    .detail-info-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      color: #665544;
+    }
+
+    .detail-info-row i {
+      width: 20px;
+      color: #9a8467;
+    }
+
+    .detail-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: #fdfcfa;
+      border: 1px solid #e8dcc9;
+      border-radius: 8px;
+      color: #665544;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin-bottom: 8px;
+    }
+
+    .detail-link:hover {
+      background: #f9f6f1;
+      border-color: #8b2525;
+      color: #8b2525;
+      transform: translateX(4px);
+    }
+
+    /* ==========================================
+       RELATIONSHIP FINDER
+       ========================================== */
+
+    .relationship-section {
+      background: linear-gradient(180deg, #fdfcfa 0%, #f9f6f1 100%);
+      border-top: 1px solid #e8dcc9;
+      border-bottom: 1px solid #e8dcc9;
+    }
+
+    .relationship-card {
+      background: #fff;
+      border: 1px solid #e8dcc9;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 8px 30px rgba(84,71,57,0.1);
+    }
+
+    .select-person {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #e8dcc9;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: 'Source Sans 3', sans-serif;
+      background: #fdfcfa;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .select-person:focus {
+      outline: none;
+      border-color: #8b2525;
+      box-shadow: 0 0 0 3px rgba(139,37,37,0.1);
+    }
+
+    .relationship-result {
+      background: linear-gradient(135deg, #f9f6f1 0%, #fff 100%);
+      border: 2px solid #d4af37;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      display: none;
+    }
+
+    .relationship-result.show {
+      display: block;
+      animation: fadeSlideUp 0.4s ease;
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==========================================
+       STATISTICS
+       ========================================== */
+
+    .stats-section {
+      background: #fff;
+    }
+
+    .chart-card {
+      background: #fdfcfa;
+      border: 1px solid #e8dcc9;
+      border-radius: 12px;
+      padding: 24px;
+      height: 100%;
+    }
+
+    .chart-title {
+      font-family: 'Source Sans 3', sans-serif !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      color: #7d6a52 !important;
+      margin-bottom: 16px;
+    }
+
+    /* Generation Bar Chart */
+    .gen-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .gen-label {
+      width: 50px;
+      font-size: 0.75rem;
+      color: #9a8467;
+      font-weight: 500;
+    }
+
+    .gen-bar-fill {
+      height: 20px;
+      background: linear-gradient(90deg, #8b2525 0%, #c44d4d 100%);
+      border-radius: 4px;
+      transition: width 1s ease;
+      position: relative;
+    }
+
+    .gen-bar-fill::after {
+      content: attr(data-count);
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.7rem;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+
+    .footer {
+      background: linear-gradient(135deg, #3d1010 0%, #5c1919 100%);
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-pattern {
+      height: 4px;
+      background: repeating-linear-gradient(
+        90deg,
+        #8b2525 0px,
+        #8b2525 20px,
+        #d4af37 20px,
+        #d4af37 40px
+      );
+    }
+
+    /* ==========================================
+       BUTTONS
+       ========================================== */
+
+    .btn-primary {
+      background: linear-gradient(135deg, #8b2525 0%, #731f1f 100%);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(139,37,37,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(139,37,37,0.4);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #d4af37 0%, #b8952c 100%);
+      color: #3d1010;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      border: 2px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    /* ==========================================
+       ANIMATIONS
+       ========================================== */
+
+    .fade-in {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+    .stagger-5 { animation-delay: 0.5s; }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ==========================================
+       RESPONSIVE
+       ========================================== */
+
+    @media (max-width: 1024px) {
+      .filter-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100vh;
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .filter-sidebar.open {
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem !important;
+      }
+
+      .stat-number {
+        font-size: 1.8rem !important;
+      }
+
+      .detail-panel {
+        max-width: 100%;
+      }
+
+      .tree-container {
+        min-height: 400px;
+      }
+    }
+
+    /* ==========================================
+       MOBILE NAV
+       ========================================== */
+
+    .mobile-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #3d1010 0%, #5c1919 100%);
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-nav.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-link {
+      display: block;
+      padding: 20px 24px;
+      color: rgba(255,255,255,0.8);
+      font-size: 1.2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.2s ease;
+    }
+
+    .mobile-nav-link:hover {
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      padding-left: 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER
+       ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary-400 to-secondary-600 flex items-center justify-center">
+            <span class="text-white font-display font-bold text-lg"></span>
+          </div>
+          <div class="hidden sm:block">
+            <div class="font-display font-bold text-white text-lg leading-tight">Tộc Đặng</div>
+            <div class="text-xs text-white/60">Non Nước</div>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#home" class="nav-link font-medium">Trang chủ</a>
+          <a href="#tree" class="nav-link font-medium">Phả đồ</a>
+          <a href="#search" class="nav-link font-medium">Tìm kiếm</a>
+          <a href="#stats" class="nav-link font-medium">Thống kê</a>
+          <a href="#contact" class="nav-link font-medium">Liên hệ</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="lg:hidden w-10 h-10 flex items-center justify-center text-white" id="menuBtn">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="flex items-center justify-between p-4 border-b border-white/10">
+      <span class="font-display font-bold text-white text-xl">Menu</span>
+      <button class="w-10 h-10 flex items-center justify-center text-white" id="closeMenuBtn">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <nav class="pt-4">
+      <a href="#home" class="mobile-nav-link">Trang chủ</a>
+      <a href="#tree" class="mobile-nav-link">Phả đồ</a>
+      <a href="#search" class="mobile-nav-link">Tìm kiếm</a>
+      <a href="#stats" class="mobile-nav-link">Thống kê</a>
+      <a href="#contact" class="mobile-nav-link">Liên hệ</a>
+    </nav>
+  </div>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero-section min-h-screen flex items-center pt-20" id="home">
+    <div class="hero-pattern"></div>
+    <div class="container mx-auto px-4 lg:px-8 relative z-10 py-16 lg:py-24">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Subtitle -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 fade-in">
+          <span class="w-2 h-2 rounded-full bg-secondary-400 animate-pulse"></span>
+          <span class="text-white/80 text-sm font-medium">Dòng họ lớn tại Đà Nẵng</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="hero-title text-white mb-6 fade-in stagger-1">
+          Tộc <span class="gold-shimmer">Đặng Văn</span><br>Non Nước
+        </h1>
+
+        <!-- Description -->
+        <p class="text-lg lg:text-xl text-white/70 mb-12 max-w-2xl mx-auto fade-in stagger-2">
+          Phả đồ gia tộc với hơn <strong class="text-white">500 năm</strong> lịch sử,
+          ghi chép <strong class="text-white">14 thế hệ</strong> con cháu dòng họ Đặng tại vùng đất Non Nước.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-12">
+          <div class="stat-card rounded-xl p-6 fade-in stagger-2">
+            <div class="stat-number" data-count="3361">0</div>
+            <div class="text-white/60 text-sm mt-1">Thành viên</div>
+          </div>
+          <div class="stat-card rounded-xl p-6 fade-in stagger-3">
+            <div class="stat-number" data-count="14">0</div>
+            <div class="text-white/60 text-sm mt-1">Thế hệ</div>
+          </div>
+          <div class="stat-card rounded-xl p-6 fade-in stagger-4">
+            <div class="stat-number" data-count="763">0</div>
+            <div class="text-white/60 text-sm mt-1">Gia đình</div>
+          </div>
+          <div class="stat-card rounded-xl p-6 fade-in stagger-5">
+            <div class="stat-number" data-count="500">0</div>
+            <div class="text-white/60 text-sm mt-1">Năm lịch sử</div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in stagger-5">
+          <a href="#tree" class="btn-secondary flex items-center gap-2">
+            <i data-lucide="git-branch" class="w-5 h-5"></i>
+            Khám phá phả đồ
+          </a>
+          <a href="#search" class="btn-outline flex items-center gap-2">
+            <i data-lucide="search" class="w-5 h-5"></i>
+            Tìm kiếm thành viên
+          </a>
+        </div>
+
+        <!-- Founder Info -->
+        <div class="mt-16 pt-8 border-t border-white/10 fade-in stagger-5">
+          <p class="text-white/50 text-sm mb-2">Thủy tổ</p>
+          <p class="font-display text-2xl text-white font-semibold">Đặng Văn Cẩn</p>
+          <p class="text-secondary-400 text-sm mt-1">Sinh ngày 20 tháng 10 năm 1519</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+      <i data-lucide="chevron-down" class="w-6 h-6"></i>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FAMILY TREE SECTION
+       ========================================== -->
+  <section class="py-16 lg:py-24 bg-warm-50" id="tree">
+    <div class="container mx-auto px-4 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold text-warm-900 mb-4">
+          Phả Đồ Gia Tộc
+        </h2>
+        <p class="text-warm-600 max-w-2xl mx-auto">
+          Khám phá mối quan hệ huyết thống qua 14 thế hệ. Click vào mỗi người để xem thông tin chi tiết.
+        </p>
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-6">
+        <!-- Filter Sidebar -->
+        <aside class="filter-sidebar lg:w-72 shrink-0" id="filterSidebar">
+          <!-- Search -->
+          <div class="filter-section">
+            <h3 class="filter-title">Tìm kiếm</h3>
+            <div class="relative">
+              <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-warm-400"></i>
+              <input type="text" placeholder="Nhập tên..." class="filter-input" id="searchInput">
+            </div>
+          </div>
+
+          <!-- Generation Filter -->
+          <div class="filter-section">
+            <h3 class="filter-title">Lọc theo đời</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="filter-chip active" data-gen="all">Tất cả</button>
+              <button class="filter-chip" data-gen="1">Đời 1</button>
+              <button class="filter-chip" data-gen="2">Đời 2</button>
+              <button class="filter-chip" data-gen="3">Đời 3</button>
+              <button class="filter-chip" data-gen="4">Đời 4</button>
+              <button class="filter-chip" data-gen="5">Đời 5</button>
+              <button class="filter-chip" data-gen="6">Đời 6</button>
+              <button class="filter-chip" data-gen="7">Đời 7</button>
+              <button class="filter-chip" data-gen="8">Đời 8</button>
+              <button class="filter-chip" data-gen="9">Đời 9</button>
+              <button class="filter-chip" data-gen="10">Đời 10</button>
+              <button class="filter-chip" data-gen="11">Đời 11</button>
+              <button class="filter-chip" data-gen="12">Đời 12</button>
+              <button class="filter-chip" data-gen="13">Đời 13</button>
+              <button class="filter-chip" data-gen="14">Đời 14</button>
+            </div>
+          </div>
+
+          <!-- Branch Filter -->
+          <div class="filter-section">
+            <h3 class="filter-title">Phái</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="filter-chip active" data-phai="all">Tất cả</button>
+              <button class="filter-chip" data-phai="nhat">Phái Nhất</button>
+              <button class="filter-chip" data-phai="nhi">Phái Nhì</button>
+            </div>
+          </div>
+
+          <!-- Status Filter -->
+          <div class="filter-section">
+            <h3 class="filter-title">Trạng thái</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="filter-chip active" data-status="all">Tất cả</button>
+              <button class="filter-chip" data-status="alive">Còn sống</button>
+              <button class="filter-chip" data-status="deceased">Đã mất</button>
+            </div>
+          </div>
+
+          <!-- Gender Filter -->
+          <div class="filter-section">
+            <h3 class="filter-title">Giới tính</h3>
+            <div class="flex flex-wrap gap-2">
+              <button class="filter-chip active" data-gender="all">Tất cả</button>
+              <button class="filter-chip" data-gender="male">Nam</button>
+              <button class="filter-chip" data-gender="female">Nữ</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Tree Container -->
+        <div class="flex-1">
+          <div class="tree-container" id="treeContainer">
+            <!-- D3.js Tree will be rendered here -->
+            <svg id="treeSvg" width="100%" height="100%"></svg>
+
+            <!-- Sample Static Tree for Demo -->
+            <div class="p-8">
+              <div class="flex flex-col items-center">
+                <!-- Gen 1 -->
+                <div class="person-node male" data-id="START" style="--gen-color: #3d1010;" onclick="openDetailPanel('START')">
+                  <div class="person-name">Đặng Văn Cẩn</div>
+                  <div class="person-gen">Đời 1 · Thủy tổ</div>
+                </div>
+
+                <!-- Connector -->
+                <div class="w-0.5 h-8 bg-warm-300"></div>
+
+                <!-- Gen 2 -->
+                <div class="flex items-start gap-4 lg:gap-16">
+                  <div class="flex flex-col items-center">
+                    <div class="w-0.5 h-8 bg-warm-300"></div>
+                    <div class="person-node male" data-id="N72F1" style="--gen-color: #4a1414;" onclick="openDetailPanel('N72F1')">
+                      <div class="person-name">Đặng Văn Danh</div>
+                      <div class="person-gen">Đời 2 · Phái Nhì</div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <div class="w-0.5 h-8 bg-warm-300"></div>
+                    <div class="person-node female deceased" data-id="CV3C9" style="--gen-color: #4a1414;" onclick="openDetailPanel('CV3C9')">
+                      <div class="person-name">Đặng Thị Hiệu</div>
+                      <div class="person-gen">Đời 2</div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <div class="w-0.5 h-8 bg-warm-300"></div>
+                    <div class="person-node male deceased" data-id="K2TAC" style="--gen-color: #4a1414;" onclick="openDetailPanel('K2TAC')">
+                      <div class="person-name">Đặng Văn Cát</div>
+                      <div class="person-gen">Đời 2 · Phái Nhất</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Horizontal connector line -->
+                <div class="relative w-full max-w-lg -mt-[88px] mb-20">
+                  <div class="absolute top-0 left-1/4 right-1/4 h-0.5 bg-warm-300"></div>
+                </div>
+
+                <!-- More generations would be loaded dynamically -->
+                <div class="text-center py-8">
+                  <p class="text-warm-500 mb-4">Đang hiển thị 3 người từ 2 đời đầu tiên</p>
+                  <button class="btn-primary" onclick="loadMoreGenerations()">
+                    <span class="flex items-center gap-2">
+                      <i data-lucide="plus" class="w-4 h-4"></i>
+                      Xem thêm các đời sau
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tree Controls -->
+            <div class="tree-controls">
+              <button class="tree-btn" title="Thu nhỏ" onclick="zoomOut()">
+                <i data-lucide="minus" class="w-4 h-4"></i>
+              </button>
+              <button class="tree-btn" title="Phóng to" onclick="zoomIn()">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </button>
+              <button class="tree-btn" title="Về giữa" onclick="resetZoom()">
+                <i data-lucide="home" class="w-4 h-4"></i>
+              </button>
+              <button class="tree-btn" title="Toàn màn hình" onclick="toggleFullscreen()">
+                <i data-lucide="maximize-2" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       RELATIONSHIP FINDER
+       ========================================== -->
+  <section class="relationship-section py-16 lg:py-24" id="relationship">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl lg:text-4xl font-display font-bold text-warm-900 mb-4">
+            Tìm Mối Quan Hệ
+          </h2>
+          <p class="text-warm-600">
+            Khám phá mối quan hệ huyết thống giữa hai thành viên trong gia tộc
+          </p>
+        </div>
+
+        <div class="relationship-card">
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label class="block text-sm font-medium text-warm-700 mb-2">Người thứ nhất</label>
+              <select class="select-person" id="person1">
+                <option value="">Chọn người...</option>
+                <option value="START">Đặng Văn Cẩn (Đời 1)</option>
+                <option value="N72F1">Đặng Văn Danh (Đời 2)</option>
+                <option value="CV3C9">Đặng Thị Hiệu (Đời 2)</option>
+                <option value="K2TAC">Đặng Văn Cát (Đời 2)</option>
+                <!-- More options loaded dynamically -->
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-warm-700 mb-2">Người thứ hai</label>
+              <select class="select-person" id="person2">
+                <option value="">Chọn người...</option>
+                <option value="START">Đặng Văn Cẩn (Đời 1)</option>
+                <option value="N72F1">Đặng Văn Danh (Đời 2)</option>
+                <option value="CV3C9">Đặng Thị Hiệu (Đời 2)</option>
+                <option value="K2TAC">Đặng Văn Cát (Đời 2)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn-primary w-full flex items-center justify-center gap-2" onclick="findRelationship()">
+            <i data-lucide="git-merge" class="w-5 h-5"></i>
+            Tìm quan hệ
+          </button>
+
+          <!-- Result -->
+          <div class="relationship-result mt-6" id="relationshipResult">
+            <div class="flex items-center justify-center gap-2 text-secondary-600 mb-2">
+              <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+            </div>
+            <p class="font-display text-xl text-warm-800 font-semibold" id="relationshipText">
+              Đặng Văn Danh là <span class="text-primary-600">con trai</span> của Đặng Văn Cẩn
+            </p>
+            <div class="flex items-center justify-center gap-2 mt-4 text-sm text-warm-500">
+              <span>Đặng Văn Cẩn</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              <span class="text-primary-600 font-medium">Cha</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              <span>Đặng Văn Danh</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       STATISTICS SECTION
+       ========================================== -->
+  <section class="stats-section py-16 lg:py-24" id="stats">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-display font-bold text-warm-900 mb-4">
+          Thống Kê Dòng Họ
+        </h2>
+        <p class="text-warm-600 max-w-2xl mx-auto">
+          Tổng quan về cấu trúc và phân bố thành viên trong gia tộc
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Generation Distribution -->
+        <div class="chart-card lg:col-span-2">
+          <h3 class="chart-title flex items-center gap-2">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+            Phân bố theo đời
+          </h3>
+          <div class="space-y-2" id="genChart">
+            <div class="gen-bar">
+              <span class="gen-label">Đời 1</span>
+              <div class="gen-bar-fill" style="width: 0.5%;" data-count="1"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 2</span>
+              <div class="gen-bar-fill" style="width: 2%;" data-count="4"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 7</span>
+              <div class="gen-bar-fill" style="width: 15%;" data-count="124"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 8</span>
+              <div class="gen-bar-fill" style="width: 25%;" data-count="288"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 9</span>
+              <div class="gen-bar-fill" style="width: 40%;" data-count="460"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 10</span>
+              <div class="gen-bar-fill" style="width: 30%;" data-count="295"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 11</span>
+              <div class="gen-bar-fill" style="width: 60%;" data-count="617"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 12</span>
+              <div class="gen-bar-fill" style="width: 80%;" data-count="790"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 13</span>
+              <div class="gen-bar-fill" style="width: 45%;" data-count="476"></div>
+            </div>
+            <div class="gen-bar">
+              <span class="gen-label">Đời 14</span>
+              <div class="gen-bar-fill" style="width: 8%;" data-count="48"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gender Distribution -->
+        <div class="chart-card">
+          <h3 class="chart-title flex items-center gap-2">
+            <i data-lucide="users" class="w-4 h-4"></i>
+            Tỷ lệ Nam/Nữ
+          </h3>
+          <div class="flex items-center justify-center py-8">
+            <div class="relative w-40 h-40">
+              <svg viewBox="0 0 100 100" class="w-full h-full -rotate-90">
+                <!-- Male -->
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#1fba5e" stroke-width="20"
+                  stroke-dasharray="118.7 133" stroke-linecap="round"/>
+                <!-- Female -->
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#c44d4d" stroke-width="20"
+                  stroke-dasharray="126 133" stroke-dashoffset="-118.7" stroke-linecap="round"/>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span class="text-2xl font-display font-bold text-warm-800">3,361</span>
+                <span class="text-xs text-warm-500">Tổng</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center gap-6 text-sm">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-accent-500"></span>
+              <span class="text-warm-600">Nam: 1,588 (47%)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-primary-400"></span>
+              <span class="text-warm-600">Nữ: 1,691 (50%)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Branch Distribution -->
+        <div class="chart-card">
+          <h3 class="chart-title flex items-center gap-2">
+            <i data-lucide="git-branch" class="w-4 h-4"></i>
+            Phân bố theo Phái
+          </h3>
+          <div class="space-y-4 py-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-warm-600">Phái Nhất</span>
+                <span class="font-medium text-warm-800">22 người</span>
+              </div>
+              <div class="h-3 bg-warm-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-secondary-400 to-secondary-500 rounded-full" style="width: 3%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-warm-600">Phái Nhì</span>
+                <span class="font-medium text-warm-800">656 người</span>
+              </div>
+              <div class="h-3 bg-warm-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-primary-400 to-primary-500 rounded-full" style="width: 95%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Distribution -->
+        <div class="chart-card">
+          <h3 class="chart-title flex items-center gap-2">
+            <i data-lucide="heart-pulse" class="w-4 h-4"></i>
+            Trạng thái
+          </h3>
+          <div class="space-y-4 py-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-warm-600">Còn sống</span>
+                <span class="font-medium text-warm-800">1,996 (59%)</span>
+              </div>
+              <div class="h-3 bg-warm-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-accent-400 to-accent-500 rounded-full" style="width: 59%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-warm-600">Đã mất</span>
+                <span class="font-medium text-warm-800">1,365 (41%)</span>
+              </div>
+              <div class="h-3 bg-warm-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-warm-400 to-warm-500 rounded-full" style="width: 41%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location Distribution -->
+        <div class="chart-card">
+          <h3 class="chart-title flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            Địa bàn phân bố
+          </h3>
+          <div class="space-y-3 py-4">
+            <div class="flex items-center gap-3 p-3 bg-warm-50 rounded-lg">
+              <div class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center">
+                <i data-lucide="building-2" class="w-4 h-4 text-primary-600"></i>
+              </div>
+              <div class="flex-1">
+                <div class="font-medium text-warm-800">Đà Nẵng</div>
+                <div class="text-xs text-warm-500">La Bông, Thanh Khê, Cẩm Lệ</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-warm-50 rounded-lg">
+              <div class="w-8 h-8 rounded-full bg-secondary-100 flex items-center justify-center">
+                <i data-lucide="trees" class="w-4 h-4 text-secondary-600"></i>
+              </div>
+              <div class="flex-1">
+                <div class="font-medium text-warm-800">Quảng Nam</div>
+                <div class="text-xs text-warm-500">Điện Hòa, Điện Bàn</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-warm-50 rounded-lg">
+              <div class="w-8 h-8 rounded-full bg-accent-100 flex items-center justify-center">
+                <i data-lucide="map" class="w-4 h-4 text-accent-600"></i>
+              </div>
+              <div class="flex-1">
+                <div class="font-medium text-warm-800">Khác</div>
+                <div class="text-xs text-warm-500">TP.HCM, Đà Lạt...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer" id="contact">
+    <div class="footer-pattern"></div>
+    <div class="container mx-auto px-4 lg:px-8 py-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <!-- About -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-secondary-400 to-secondary-600 flex items-center justify-center">
+              <span class="text-white font-display font-bold text-xl"></span>
+            </div>
+            <div>
+              <div class="font-display font-bold text-white text-xl">Tộc Đặng Văn Non Nước</div>
+              <div class="text-sm text-white/60">Dòng họ lớn tại Đà Nẵng</div>
+            </div>
+          </div>
+          <p class="text-white/70 mb-6 max-w-md">
+            Phả đồ gia tộc với hơn 500 năm lịch sử, ghi chép 14 thế hệ con cháu dòng họ Đặng tại vùng đất Non Nước, Đà Nẵng.
+          </p>
+          <div class="flex items-center gap-2 text-white/80">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <a href="mailto:admin@tocdangnonnuoc.com" class="hover:text-secondary-400 transition-colors">
+              admin@tocdangnonnuoc.com
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display font-semibold text-white mb-4">Liên kết nhanh</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-white/70 hover:text-white transition-colors">Trang chủ</a></li>
+            <li><a href="#tree" class="text-white/70 hover:text-white transition-colors">Phả đồ</a></li>
+            <li><a href="#search" class="text-white/70 hover:text-white transition-colors">Tìm kiếm</a></li>
+            <li><a href="#stats" class="text-white/70 hover:text-white transition-colors">Thống kê</a></li>
+          </ul>
+        </div>
+
+        <!-- Info -->
+        <div>
+          <h4 class="font-display font-semibold text-white mb-4">Thông tin</h4>
+          <ul class="space-y-2 text-white/70">
+            <li class="flex items-center gap-2">
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <span>3,361 thành viên</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="git-branch" class="w-4 h-4"></i>
+              <span>14 thế hệ</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>Từ năm 1519</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+              <span>Đà Nẵng, Việt Nam</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-white/50 text-sm">
+          © 2026 Tộc Đặng Văn Non Nước. Người quản lý: Đặng Trần Chí Toàn (Đời 13)
+        </p>
+        <p class="text-white/50 text-sm">
+          Dữ liệu cập nhật: 20/01/2026
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       DETAIL PANEL
+       ========================================== -->
+  <div class="detail-overlay" id="detailOverlay" onclick="closeDetailPanel()"></div>
+  <aside class="detail-panel" id="detailPanel">
+    <div class="detail-header">
+      <button class="detail-close" onclick="closeDetailPanel()">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="detail-photo">
+        <i data-lucide="user" class="w-10 h-10"></i>
+      </div>
+      <h3 class="detail-name" id="detailName">Đặng Văn Cẩn</h3>
+      <p class="detail-subtitle" id="detailSubtitle">Đời thứ 1 · Thủy tổ</p>
+    </div>
+    <div class="detail-content">
+      <div class="detail-section">
+        <h4 class="detail-section-title">Thông tin cơ bản</h4>
+        <div class="detail-info-row">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span id="detailBirth">Sinh: 20/10/1519</span>
+        </div>
+        <div class="detail-info-row">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span id="detailGender">Giới tính: Nam</span>
+        </div>
+        <div class="detail-info-row">
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
+          <span id="detailAddress">Quê: Non Nước, Đà Nẵng</span>
+        </div>
+        <div class="detail-info-row">
+          <i data-lucide="heart" class="w-4 h-4"></i>
+          <span id="detailStatus">Trạng thái: Đã mất</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h4 class="detail-section-title">Gia đình</h4>
+        <div id="detailFamily">
+          <a href="#" class="detail-link">
+            <i data-lucide="heart" class="w-4 h-4 text-primary-400"></i>
+            <span>Vợ: [Tên vợ]</span>
+          </a>
+          <a href="#" class="detail-link">
+            <i data-lucide="user" class="w-4 h-4 text-accent-500"></i>
+            <span>Con: Đặng Văn Danh (Đời 2)</span>
+          </a>
+          <a href="#" class="detail-link">
+            <i data-lucide="user" class="w-4 h-4 text-primary-400"></i>
+            <span>Con: Đặng Thị Hiệu (Đời 2)</span>
+          </a>
+          <a href="#" class="detail-link">
+            <i data-lucide="user" class="w-4 h-4 text-accent-500"></i>
+            <span>Con: Đặng Văn Cát (Đời 2)</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h4 class="detail-section-title">Ghi chú</h4>
+        <p class="text-warm-600 text-sm" id="detailNotes">
+          Đặng Văn Non nước. Thủy tổ của dòng họ Đặng tại vùng đất Non Nước, Đà Nẵng.
+        </p>
+      </div>
+
+      <button class="btn-primary w-full mt-4 flex items-center justify-center gap-2" onclick="focusOnTree()">
+        <i data-lucide="focus" class="w-4 h-4"></i>
+        Xem trên phả đồ
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       MOBILE FILTER BUTTON
+       ========================================== -->
+  <button class="lg:hidden fixed bottom-6 right-6 w-14 h-14 bg-primary-500 text-white rounded-full shadow-xl flex items-center justify-center z-50" id="filterBtn">
+    <i data-lucide="sliders-horizontal" class="w-6 h-6"></i>
+  </button>
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('bg-primary-900/95', 'backdrop-blur-md', 'shadow-lg');
+      } else {
+        header.classList.remove('bg-primary-900/95', 'backdrop-blur-md', 'shadow-lg');
+      }
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+    closeMenuBtn.addEventListener('click', () => mobileNav.classList.remove('open'));
+
+    // Mobile filter
+    const filterBtn = document.getElementById('filterBtn');
+    const filterSidebar = document.getElementById('filterSidebar');
+
+    filterBtn?.addEventListener('click', () => {
+      filterSidebar.classList.toggle('open');
+    });
+
+    // Detail Panel
+    function openDetailPanel(id) {
+      document.getElementById('detailPanel').classList.add('open');
+      document.getElementById('detailOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      // Load person data here based on id
+    }
+
+    function closeDetailPanel() {
+      document.getElementById('detailPanel').classList.remove('open');
+      document.getElementById('detailOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Tree controls
+    let currentZoom = 1;
+
+    function zoomIn() {
+      currentZoom = Math.min(currentZoom + 0.2, 3);
+      applyZoom();
+    }
+
+    function zoomOut() {
+      currentZoom = Math.max(currentZoom - 0.2, 0.5);
+      applyZoom();
+    }
+
+    function resetZoom() {
+      currentZoom = 1;
+      applyZoom();
+    }
+
+    function applyZoom() {
+      const container = document.querySelector('#treeContainer > div');
+      if (container) {
+        container.style.transform = `scale(${currentZoom})`;
+        container.style.transformOrigin = 'center top';
+      }
+    }
+
+    function toggleFullscreen() {
+      const container = document.getElementById('treeContainer');
+      if (!document.fullscreenElement) {
+        container.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    function loadMoreGenerations() {
+      alert('Tính năng này sẽ tải thêm dữ liệu từ file JSON');
+    }
+
+    function focusOnTree() {
+      closeDetailPanel();
+      document.getElementById('tree').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Filter chips
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.addEventListener('click', function() {
+        const parent = this.parentElement;
+        parent.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Relationship finder
+    function findRelationship() {
+      const person1 = document.getElementById('person1').value;
+      const person2 = document.getElementById('person2').value;
+
+      if (!person1 || !person2) {
+        alert('Vui lòng chọn cả hai người');
+        return;
+      }
+
+      document.getElementById('relationshipResult').classList.add('show');
+    }
+
+    // Animate stat numbers
+    function animateNumbers() {
+      document.querySelectorAll('.stat-number[data-count]').forEach(el => {
+        const target = parseInt(el.dataset.count);
+        const duration = 2000;
+        const start = performance.now();
+
+        function update(currentTime) {
+          const elapsed = currentTime - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(easeOut * target);
+          el.textContent = current.toLocaleString();
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = target.toLocaleString() + (target === 500 ? '+' : '');
+          }
+        }
+
+        requestAnimationFrame(update);
+      });
+    }
+
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains('hero-section')) {
+            animateNumbers();
+          }
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.hero-section, .fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          mobileNav.classList.remove('open');
+        }
+      });
+    });
+
+    // Initialize on load
+    window.addEventListener('load', () => {
+      setTimeout(animateNumbers, 500);
+    });
+  </script>
+
+</body>
+</html>

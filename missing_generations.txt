@@ -1,0 +1,151 @@
+ID	Tên	Cha ID	Đời cha	Họ Đặng
+CK4EO	Cúc Lê Thị	N/A	N/A	Không
+RXSZ9	Tiên (đời Thứ 14) Trần Nhã Cát	UHZ5G	N/A	Không
+UHZ5G	Trãi Trần	N/A	N/A	Không
+FQR5R	Tỷ Trần Thị	N/A	N/A	Không
+QQLU3	Tâm Nguyễn Từ	N/A	N/A	Không
+STURD	Nguyễn Tộc	N/A	N/A	Không
+OPT2P	Nguyễn Tộc	N/A	N/A	Không
+PX1C2	Nguyễn Tộc	N/A	N/A	Không
+XPXON	Huỳnh Tộc	N/A	N/A	Không
+MDSYF	Nguyễn Tộc	N/A	N/A	Không
+AHQ2L	Nguyễn Tộc	N/A	N/A	Không
+TSWE2	Nguyễn Tộc	N/A	N/A	Không
+H8I9K	Đặng Tộc	N/A	N/A	Không
+V5A6F	Nguyễn Tộc	N/A	N/A	Không
+RRH4P	Nguyễn Tộc	N/A	N/A	Không
+WPOTI	Nguyễn Tộc	N/A	N/A	Không
+NBFPB	Nguyễn Tộc	N/A	N/A	Không
+FTM3X	Nguyễn Tộc	N/A	N/A	Không
+M8YNT	Nguyễn Tộc	N/A	N/A	Không
+OTFXG	Lượng Ngô	N/A	N/A	Không
+D9E4M	Quế Nguyễn	N/A	N/A	Không
+E6EE7	Chúc Hồ Thanh	N/A	N/A	Không
+ZAKHA	Thế Cao Văn	N/A	N/A	Không
+Y2Q4U	Loan Phùng Thị	N/A	N/A	Không
+SRYRQ	Thanh Hồ Thị	N/A	N/A	Không
+MQ6KW	Uyển Trần Thị	N/A	N/A	Không
+NVDL8	Nuôi Trịnh	N/A	N/A	Không
+GKXMU	Thu Trần Văn	N/A	N/A	Không
+J4P9L	Nam Nguyễn	N/A	N/A	Không
+U1RX7	Thông Huỳnh Văn	N/A	N/A	Không
+JPP3H	Hà Nguyễn Văn	N/A	N/A	Không
+V9Y79	Nhân 	N/A	N/A	Không
+PFZOH	Nhựt 	N/A	N/A	Không
+XSV3L	Hoàng Nguyễn	N/A	N/A	Không
+W0G9T	An 	N/A	N/A	Không
+O3T6X	Thanh Phan	N/A	N/A	Không
+C2P7P	Ngự Trần Văn	N/A	N/A	Không
+YUYI1	Thuận Nguyễn Văn	N/A	N/A	Không
+X0XJX	Anh Nguyễn Văn	N/A	N/A	Không
+ATM5Y	Ý Nguyễn Thị	N/A	N/A	Không
+KN5O9	Ngọ Trần Thị	N/A	N/A	Không
+MGZ2Q	Nhiều Hồ Thị	N/A	N/A	Không
+P931U	Tự Ngô Thị	N/A	N/A	Không
+QM6C8	Xin Đào Thị	N/A	N/A	Không
+SKWU3	Dân Võ Bồi	N/A	N/A	Không
+O8TSF	Quỳnh Võ	SKWU3	N/A	Không
+B22E1	Miễn Võ Thị	SKWU3	N/A	Không
+F5K8X	Nhã Võ Thị	SKWU3	N/A	Không
+CX87Y	Pham Tộc(Ruộng)	N/A	N/A	Không
+UFOYS	Kỳ Xã Kỳ	N/A	N/A	Không
+QUKPG	Nguyễn Họ (Quang Cữu)	N/A	N/A	Không
+AZS96	Lan Dương Thi	N/A	N/A	Không
+WWIZK	Non Ngô Thị	N/A	N/A	Không
+WVTRV	Xin Trần Thị	N/A	N/A	Không
+CHL4W	A 	N/A	N/A	Không
+S00MP	A 	N/A	N/A	Không
+OZHF2	B 	N/A	N/A	Không
+G2JUN	Hòa Đinh Thị	N/A	N/A	Không
+NFZGT	B 	N/A	N/A	Không
+QVS2E	C 	N/A	N/A	Không
+BVHJA	Y 	N/A	N/A	Không
+FMD5N	Tây Ngô Thị	N/A	N/A	Không
+Y0064	Hiền Phan Thị	N/A	N/A	Không
+QY2VO	Thụy Phạm Thị	N/A	N/A	Không
+JDFOC	Mẹo Huỳnh Thị	N/A	N/A	Không
+HZXAI	Hơn Nguyễn Thị	N/A	N/A	Không
+M8O4R	Thêm Nguyễn Thị	N/A	N/A	Không
+YQDVS	Dư Nguyễn Thị	N/A	N/A	Không
+UN17E	Bán Thị	N/A	N/A	Không
+L42AV	Hiệp Huỳnh Thị	N/A	N/A	Không
+JRX0J	 	N/A	N/A	Không
+AK8QY	Đồng Trần Thị	N/A	N/A	Không
+SPT30	Bích Hà Thị	N/A	N/A	Không
+O12BG	Thông Nguyễn Thị	N/A	N/A	Không
+F8XHI	Mua Hồ Thị	N/A	N/A	Không
+ICQ6S	Tâm Huỳnh Thị	N/A	N/A	Không
+YN3NO	Mai Trương Thị	N/A	N/A	Không
+DJTL8	Hải Huỳnh Thị	N/A	N/A	Không
+NJGW7	Quân Trần Đỗ	UHZ5G	N/A	Không
+LR2XB	Ngào Ngô Thị	N/A	N/A	Không
+LLEUZ	Sửu Hồ Thị	N/A	N/A	Không
+R8MVN	Khuê Nguyễn Thị	N/A	N/A	Không
+N7IQI	Xây Nguyễn Thị	N/A	N/A	Không
+E6UM1	Lan Nguyễn Thị	N/A	N/A	Không
+PEH0T	Cư Lê Thị	N/A	N/A	Không
+HZ80U	Hộ Hồ Thị	N/A	N/A	Không
+RX73P	Trác Ngô Thị	N/A	N/A	Không
+ELJ0M	Hồ Nguyễn Thị	N/A	N/A	Không
+YG2CW	Sáu Hồ Thị	N/A	N/A	Không
+IJY2U	Trấu Huỳnh Thị	N/A	N/A	Không
+G7TXT	Ngọc Trần Thị	N/A	N/A	Không
+TZWLA	Đồn Bùi Thị	N/A	N/A	Không
+JUMBR	Chính Lê Thị	N/A	N/A	Không
+GU3K7	Đờn Lê Thị	N/A	N/A	Không
+ZADEX	Lên Lê Thị	N/A	N/A	Không
+CGUGH	Mười Đàm Quang	N/A	N/A	Không
+HTQ6E	Trấu Huỳnh Thị	N/A	N/A	Không
+AX4XO	Dung Huỳnh Thị	N/A	N/A	Không
+SGHRC	Chen Huy	N/A	N/A	Không
+TZ3W3	Hương Phạm Thị Mỹ	N/A	N/A	Không
+T09KB	 Đặng Thị Bích	N/A	N/A	Có
+TJ39N	Thưởng Lê Văn	N/A	N/A	Không
+V8NPH	Thảo Lê Văn	N/A	N/A	Không
+JSLQH	Du Nguyễn Văn	N/A	N/A	Không
+BXJQO	Thiện Phạm Văn	N/A	N/A	Không
+R43AO	Thọ Từ Văn	N/A	N/A	Không
+M0IJT	Văn Nguyễn	N/A	N/A	Không
+H5DOR	Phong Diệp Thanh	N/A	N/A	Không
+VEUS9	Cư Nguyễn Văn	N/A	N/A	Không
+XVNBB	Vui Đinh Văn	N/A	N/A	Không
+WQ140	Thao Bùi Văn	N/A	N/A	Không
+EUXE0	Bửu Lê Thanh	N/A	N/A	Không
+Z7ZD7	Thi Ngô Minh	N/A	N/A	Không
+V0O8F	Thanh Võ Tấn	N/A	N/A	Không
+VMUMU	Thắng Ngô Minh	N/A	N/A	Không
+W3FAE	Tân Hà Thúc	N/A	N/A	Không
+SOWM9	Hùng Ngô Văn	N/A	N/A	Không
+HQ6YQ	Tiến Nguyễn Ngọc	N/A	N/A	Không
+AMDW3	Cường Nguyễn Văn	N/A	N/A	Không
+YVF31	Huy Huỳnh Lê	N/A	N/A	Không
+MJ6VM	Bàn 	N/A	N/A	Không
+Y9IGX	Thành Nguyễn Văn	N/A	N/A	Không
+RWEHF	Phi Ngô Thị	N/A	N/A	Không
+XNK26	Ngô Nguyễn Văn	N/A	N/A	Không
+H6Z39	Hòa Giang Gia	N/A	N/A	Không
+WKHKR	My Nguyễn Thị Trà	N/A	N/A	Không
+QXX6U	Chi Nguyễn Mai Lan	N/A	N/A	Không
+PMP1B	Hạnh Đỗ Thị	N/A	N/A	Không
+TUMSO	Hiền Trần Thị	N/A	N/A	Không
+I8JPQ	Hiền Huỳnh Thị Thu	N/A	N/A	Không
+ZAACY	Mưu Dương Thị Th	N/A	N/A	Không
+TRPKK	Lê Huyên Thị Minh	N/A	N/A	Không
+DKVET	Mai Võ Thị	N/A	N/A	Không
+ITWRW	Dung Trương Thị	N/A	N/A	Không
+PUCKG	Quýt Nguyễn Thị	N/A	N/A	Không
+ECYO6	Xuân Trần Thị	N/A	N/A	Không
+VHK5N	Vân Nguyễn Thị	N/A	N/A	Không
+T9EHF	Như Vũ Ngọc Lam	N/A	N/A	Không
+YMAY9	Ba Ngô Thị	N/A	N/A	Không
+OFHBY	Sáu Trần Thị	N/A	N/A	Không
+JLRZ1	Vân Lê Thị	N/A	N/A	Không
+WZ06T	 Đặng Văn	N/A	N/A	Có
+RUQBB	Nhung Nguyễn Thị Hồng	N/A	N/A	Không
+PWVDF	Nguyệt Nguyễn Thị Ánh	N/A	N/A	Không
+MP7J6	Quý Lê Thị Thái	N/A	N/A	Không
+LEDEL	Quang Lưu Viết	N/A	N/A	Không
+EDUNB	Lan Trần Thị Vu	N/A	N/A	Không
+K1VXP	Ngân Trần Thị Thúy	N/A	N/A	Không
+YLQU9	Xuân Nguyễn Thị	N/A	N/A	Không
+CDTS5	Thảo Ngô Thị Yến	N/A	N/A	Không

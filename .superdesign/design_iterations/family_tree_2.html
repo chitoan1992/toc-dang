@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Phả đồ Tộc Đặng Văn Non Nước - Dòng họ lớn tại Đà Nẵng với lịch sử hơn 500 năm">
+  <title>Tộc Đặng Văn Non Nước | Phả Đồ Gia Tộc</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'body': ['Source Sans 3', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            primary: {
+              50: '#fdf2f2', 100: '#fce4e4', 200: '#fababa', 300: '#f58a8a',
+              400: '#c44d4d', 500: '#8b2525', 600: '#731f1f', 700: '#5c1919',
+              800: '#4a1414', 900: '#3d1010',
+            },
+            secondary: {
+              50: '#fdfcf5', 100: '#faf6e6', 200: '#f5ecc7', 300: '#eddc9a',
+              400: '#e2c564', 500: '#d4af37', 600: '#b8952c', 700: '#967623',
+              800: '#785e1c', 900: '#5a4615',
+            },
+            accent: {
+              500: '#1fba5e', 600: '#149a4a',
+            },
+            warm: {
+              50: '#fdfcfa', 100: '#f9f6f1', 200: '#f2ebe0', 300: '#e8dcc9',
+              400: '#d4c4a8', 500: '#b8a383', 600: '#9a8467', 700: '#7d6a52',
+              800: '#665544', 900: '#544739',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Source Sans 3', system-ui, sans-serif !important;
+      background-color: #fdfcfa !important;
+      color: #544739 !important;
+      margin: 0;
+      overflow: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif !important;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(135deg, #4a1414 0%, #731f1f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .header-title {
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-title .gold {
+      color: #d4af37;
+    }
+
+    .header-stats {
+      display: flex;
+      gap: 20px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+    }
+
+    .header-stats span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .header-stats strong {
+      color: #d4af37;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 300px;
+      height: calc(100vh - 60px);
+      background: #fff;
+      border-right: 1px solid #e8dcc9;
+      overflow-y: auto;
+      z-index: 50;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar.collapsed {
+      transform: translateX(-300px);
+    }
+
+    .sidebar-section {
+      padding: 16px;
+      border-bottom: 1px solid #f2ebe0;
+    }
+
+    .sidebar-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9a8467;
+      margin-bottom: 12px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 12px 10px 36px;
+      border: 1px solid #e8dcc9;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      background: #fdfcfa;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: #8b2525;
+      box-shadow: 0 0 0 3px rgba(139,37,37,0.1);
+    }
+
+    .search-wrapper {
+      position: relative;
+    }
+
+    .search-wrapper svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: #9a8467;
+    }
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .filter-chip {
+      padding: 4px 10px;
+      border: 1px solid #e8dcc9;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: #fff;
+      color: #7d6a52;
+    }
+
+    .filter-chip:hover {
+      border-color: #8b2525;
+      color: #8b2525;
+    }
+
+    .filter-chip.active {
+      background: #8b2525;
+      border-color: #8b2525;
+      color: #fff;
+    }
+
+    /* Search Results */
+    .search-results {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .search-result {
+      padding: 10px 12px;
+      border-bottom: 1px solid #f2ebe0;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .search-result:hover {
+      background: #f9f6f1;
+    }
+
+    .search-result-name {
+      font-weight: 600;
+      color: #3d1010;
+      font-size: 0.9rem;
+    }
+
+    .search-result-info {
+      font-size: 0.75rem;
+      color: #9a8467;
+      margin-top: 2px;
+    }
+
+    /* Tree Container */
+    .tree-container {
+      position: fixed;
+      top: 60px;
+      left: 300px;
+      right: 0;
+      bottom: 0;
+      background: #fdfcfa;
+      overflow: hidden;
+    }
+
+    .tree-container.expanded {
+      left: 0;
+    }
+
+    #tree-svg {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+
+    #tree-svg:active {
+      cursor: grabbing;
+    }
+
+    /* Tree Nodes */
+    .node {
+      cursor: pointer;
+    }
+
+    .node-card {
+      fill: #fff;
+      stroke: #e8dcc9;
+      stroke-width: 2;
+      rx: 8;
+      transition: all 0.2s;
+    }
+
+    .node:hover .node-card {
+      stroke: #8b2525;
+      filter: drop-shadow(0 4px 12px rgba(139,37,37,0.15));
+    }
+
+    .node.selected .node-card {
+      stroke: #d4af37;
+      stroke-width: 3;
+      filter: drop-shadow(0 0 8px rgba(212,175,55,0.4));
+    }
+
+    .node-gen-bar {
+      rx: 8 8 0 0;
+    }
+
+    .node-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 12px;
+      font-weight: 600;
+      fill: #3d1010;
+    }
+
+    .node-info {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 10px;
+      fill: #9a8467;
+    }
+
+    .node-gender-indicator {
+      stroke-width: 3;
+    }
+
+    .node-gender-indicator.male {
+      stroke: #1fba5e;
+    }
+
+    .node-gender-indicator.female {
+      stroke: #c44d4d;
+    }
+
+    .node-expand-btn {
+      fill: #f9f6f1;
+      stroke: #e8dcc9;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .node-expand-btn:hover {
+      fill: #8b2525;
+      stroke: #8b2525;
+    }
+
+    .node-expand-btn:hover + text {
+      fill: #fff;
+    }
+
+    .node-children-count {
+      font-size: 9px;
+      fill: #7d6a52;
+      font-weight: 600;
+    }
+
+    /* Tree Links */
+    .link {
+      fill: none;
+      stroke: #d4c4a8;
+      stroke-width: 2;
+    }
+
+    .link.highlighted {
+      stroke: #d4af37;
+      stroke-width: 3;
+    }
+
+    /* Controls */
+    .tree-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      background: rgba(255,255,255,0.95);
+      padding: 8px 16px;
+      border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border: 1px solid #e8dcc9;
+    }
+
+    .tree-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid #d4c4a8;
+      background: #fff;
+      color: #7d6a52;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tree-btn:hover {
+      background: #8b2525;
+      border-color: #8b2525;
+      color: #fff;
+    }
+
+    .tree-btn.active {
+      background: #8b2525;
+      border-color: #8b2525;
+      color: #fff;
+    }
+
+    /* Toggle Sidebar Button */
+    .toggle-sidebar {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+
+    /* Mini Map */
+    .mini-map {
+      position: absolute;
+      bottom: 80px;
+      right: 20px;
+      width: 150px;
+      height: 100px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid #e8dcc9;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .mini-map-viewport {
+      fill: rgba(139,37,37,0.2);
+      stroke: #8b2525;
+      stroke-width: 1;
+    }
+
+    /* Detail Panel */
+    .detail-panel {
+      position: fixed;
+      top: 60px;
+      right: 0;
+      width: 350px;
+      height: calc(100vh - 60px);
+      background: #fff;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      z-index: 60;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      overflow-y: auto;
+    }
+
+    .detail-panel.open {
+      transform: translateX(0);
+    }
+
+    .detail-header {
+      background: linear-gradient(135deg, #5c1919 0%, #731f1f 100%);
+      padding: 20px;
+      color: #fff;
+      position: relative;
+    }
+
+    .detail-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .detail-close:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .detail-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid rgba(212,175,55,0.5);
+      background: #e8dcc9;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9a8467;
+    }
+
+    .detail-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .detail-subtitle {
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+
+    .detail-content {
+      padding: 20px;
+    }
+
+    .detail-section {
+      margin-bottom: 20px;
+    }
+
+    .detail-section-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9a8467;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #f2ebe0;
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: 0.85rem;
+      color: #665544;
+    }
+
+    .detail-row svg {
+      width: 16px;
+      height: 16px;
+      color: #9a8467;
+    }
+
+    .detail-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #fdfcfa;
+      border: 1px solid #e8dcc9;
+      border-radius: 6px;
+      color: #665544;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+
+    .detail-link:hover {
+      background: #f9f6f1;
+      border-color: #8b2525;
+      color: #8b2525;
+      transform: translateX(4px);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #8b2525 0%, #731f1f 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(139,37,37,0.3);
+    }
+
+    /* Loading */
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #7d6a52;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #e8dcc9;
+      border-top-color: #8b2525;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Generation Colors */
+    .gen-1 { fill: #3d1010; }
+    .gen-2 { fill: #4a1414; }
+    .gen-3 { fill: #5c1919; }
+    .gen-4 { fill: #731f1f; }
+    .gen-5 { fill: #8b2525; }
+    .gen-6 { fill: #a03030; }
+    .gen-7 { fill: #b54040; }
+    .gen-8 { fill: #c55555; }
+    .gen-9 { fill: #d57070; }
+    .gen-10 { fill: #e08888; }
+    .gen-11 { fill: #e8a0a0; }
+    .gen-12 { fill: #f0b8b8; }
+    .gen-13 { fill: #f5d0d0; }
+    .gen-14 { fill: #fae8e8; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        transform: translateX(-100%);
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .tree-container {
+        left: 0;
+      }
+      .detail-panel {
+        width: 100%;
+      }
+      .header-stats {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-title">
+      <span class="gold">Đ</span>
+      <span>Tộc Đặng <span class="gold">Non Nước</span></span>
+    </div>
+    <div class="header-stats">
+      <span><strong id="stat-total">0</strong> người</span>
+      <span><strong id="stat-gen">14</strong> đời</span>
+      <span><strong id="stat-families">0</strong> gia đình</span>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <!-- Search -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Tìm kiếm</div>
+      <div class="search-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Nhập tên người cần tìm...">
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+
+    <!-- Generation Filter -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Lọc theo đời</div>
+      <div class="filter-chips" id="gen-filters">
+        <button class="filter-chip active" data-gen="all">Tất cả</button>
+      </div>
+    </div>
+
+    <!-- Gender Filter -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Giới tính</div>
+      <div class="filter-chips">
+        <button class="filter-chip active" data-gender="all">Tất cả</button>
+        <button class="filter-chip" data-gender="male">Nam</button>
+        <button class="filter-chip" data-gender="female">Nữ</button>
+      </div>
+    </div>
+
+    <!-- Status Filter -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Trạng thái</div>
+      <div class="filter-chips">
+        <button class="filter-chip active" data-status="all">Tất cả</button>
+        <button class="filter-chip" data-status="alive">Còn sống</button>
+        <button class="filter-chip" data-status="deceased">Đã mất</button>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="sidebar-section">
+      <div class="sidebar-title">Liên kết nhanh</div>
+      <div class="detail-link" onclick="focusNode('START')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        </svg>
+        <span>Về Thủy tổ (Đời 1)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Tree Container -->
+  <div class="tree-container" id="tree-container">
+    <div class="loading" id="loading">
+      <div class="loading-spinner"></div>
+      <div>Đang tải dữ liệu phả đồ...</div>
+    </div>
+
+    <svg id="tree-svg"></svg>
+
+    <!-- Toggle Sidebar -->
+    <button class="tree-btn toggle-sidebar" id="toggle-sidebar" title="Ẩn/Hiện bộ lọc">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+        <line x1="9" x2="9" y1="3" y2="21"></line>
+      </svg>
+    </button>
+
+    <!-- Controls -->
+    <div class="tree-controls">
+      <button class="tree-btn" id="zoom-out" title="Thu nhỏ">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+          <line x1="8" x2="14" y1="11" y2="11"></line>
+        </svg>
+      </button>
+      <button class="tree-btn" id="zoom-in" title="Phóng to">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+          <line x1="11" x2="11" y1="8" y2="14"></line>
+          <line x1="8" x2="14" y1="11" y2="11"></line>
+        </svg>
+      </button>
+      <button class="tree-btn" id="reset-view" title="Về giữa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+      </button>
+      <button class="tree-btn" id="expand-all" title="Mở rộng tất cả">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <polyline points="9 21 3 21 3 15"></polyline>
+          <line x1="21" x2="14" y1="3" y2="10"></line>
+          <line x1="3" x2="10" y1="21" y2="14"></line>
+        </svg>
+      </button>
+      <button class="tree-btn" id="collapse-all" title="Thu gọn tất cả">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="4 14 10 14 10 20"></polyline>
+          <polyline points="20 10 14 10 14 4"></polyline>
+          <line x1="14" x2="21" y1="10" y2="3"></line>
+          <line x1="3" x2="10" y1="21" y2="14"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mini Map -->
+    <div class="mini-map" id="mini-map">
+      <svg id="mini-map-svg" width="100%" height="100%"></svg>
+    </div>
+  </div>
+
+  <!-- Detail Panel -->
+  <aside class="detail-panel" id="detail-panel">
+    <div class="detail-header">
+      <button class="detail-close" onclick="closeDetailPanel()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+      <div class="detail-photo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <div class="detail-name" id="detail-name">-</div>
+      <div class="detail-subtitle" id="detail-subtitle">-</div>
+    </div>
+    <div class="detail-content">
+      <div class="detail-section">
+        <div class="detail-section-title">Thông tin cơ bản</div>
+        <div class="detail-row" id="detail-birth">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+            <line x1="16" x2="16" y1="2" y2="6"></line>
+            <line x1="8" x2="8" y1="2" y2="6"></line>
+            <line x1="3" x2="21" y1="10" y2="10"></line>
+          </svg>
+          <span>-</span>
+        </div>
+        <div class="detail-row" id="detail-gender">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>-</span>
+        </div>
+        <div class="detail-row" id="detail-status">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+          </svg>
+          <span>-</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <div class="detail-section-title">Gia đình</div>
+        <div id="detail-family"></div>
+      </div>
+
+      <div class="detail-section" id="detail-notes-section" style="display:none;">
+        <div class="detail-section-title">Ghi chú</div>
+        <p id="detail-notes" style="font-size: 0.85rem; color: #665544;"></p>
+      </div>
+
+      <button class="btn-primary" onclick="focusSelectedNode()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M12 2v4m0 12v4M2 12h4m12 0h4"></path>
+        </svg>
+        Xem trên phả đồ
+      </button>
+    </div>
+  </aside>
+
+  <script>
+    // ==========================================
+    // GLOBAL STATE
+    // ==========================================
+    let familyData = null;
+    let treeData = null;
+    let root = null;
+    let selectedNode = null;
+    let svg, g, zoom;
+    let nodeWidth = 140;
+    let nodeHeight = 60;
+    let horizontalSpacing = 180;
+    let verticalSpacing = 100;
+
+    // ==========================================
+    // LOAD DATA
+    // ==========================================
+    async function loadData() {
+      try {
+        // Load full data
+        const dataResponse = await fetch('../../family_data.json');
+        familyData = await dataResponse.json();
+
+        // Update stats
+        document.getElementById('stat-total').textContent = familyData.metadata.total_members.toLocaleString();
+        document.getElementById('stat-families').textContent = familyData.metadata.total_families.toLocaleString();
+
+        // Generate generation filter chips
+        const genFilters = document.getElementById('gen-filters');
+        const generations = Object.keys(familyData.statistics.generations)
+          .map(Number)
+          .filter(g => g > 0)
+          .sort((a, b) => a - b);
+
+        generations.forEach(gen => {
+          const chip = document.createElement('button');
+          chip.className = 'filter-chip';
+          chip.dataset.gen = gen;
+          chip.textContent = `Đời ${gen}`;
+          genFilters.appendChild(chip);
+        });
+
+        // Build tree hierarchy
+        buildTreeHierarchy();
+
+        // Hide loading
+        document.getElementById('loading').style.display = 'none';
+
+        // Initialize D3 tree
+        initTree();
+
+      } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('loading').innerHTML = `
+          <div style="color: #c44d4d;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: 12px;">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" x2="12" y1="8" y2="12"></line>
+              <line x1="12" x2="12.01" y1="16" y2="16"></line>
+            </svg>
+            <div>Không thể tải dữ liệu</div>
+            <div style="font-size: 0.8rem; margin-top: 8px;">Vui lòng chạy convert_to_json.py trước</div>
+          </div>
+        `;
+      }
+    }
+
+    // ==========================================
+    // BUILD TREE HIERARCHY
+    // ==========================================
+    function buildTreeHierarchy() {
+      const persons = familyData.persons;
+
+      // Create hierarchy from founder
+      function buildNode(personId, depth = 0) {
+        if (!persons[personId]) return null;
+        if (depth > 5) return null; // Limit initial depth
+
+        const person = persons[personId];
+        const children = (person.children_ids || [])
+          .map(childId => buildNode(childId, depth + 1))
+          .filter(Boolean);
+
+        return {
+          id: personId,
+          name: `${person.surname} ${person.name}`.trim(),
+          generation: person.generation,
+          gender: person.gender,
+          is_deceased: person.is_deceased,
+          phai: person.phai,
+          _children: children.length > 0 ? children : null,
+          children: depth < 2 ? children : null, // Only expand first 2 levels
+          data: person
+        };
+      }
+
+      treeData = buildNode('START');
+    }
+
+    // ==========================================
+    // INITIALIZE D3 TREE
+    // ==========================================
+    function initTree() {
+      const container = document.getElementById('tree-container');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      svg = d3.select('#tree-svg')
+        .attr('width', width)
+        .attr('height', height);
+
+      // Add zoom behavior
+      zoom = d3.zoom()
+        .scaleExtent([0.1, 3])
+        .on('zoom', (event) => {
+          g.attr('transform', event.transform);
+          updateMiniMap(event.transform);
+        });
+
+      svg.call(zoom);
+
+      // Create main group
+      g = svg.append('g')
+        .attr('transform', `translate(${width / 2}, 80)`);
+
+      // Create hierarchy
+      root = d3.hierarchy(treeData);
+
+      // Initial render
+      update(root);
+
+      // Center on root
+      const initialTransform = d3.zoomIdentity
+        .translate(width / 2, 80)
+        .scale(0.8);
+      svg.call(zoom.transform, initialTransform);
+    }
+
+    // ==========================================
+    // UPDATE TREE
+    // ==========================================
+    function update(source) {
+      const duration = 500;
+
+      // Create tree layout
+      const treeLayout = d3.tree()
+        .nodeSize([horizontalSpacing, verticalSpacing])
+        .separation((a, b) => a.parent === b.parent ? 1 : 1.2);
+
+      // Compute layout
+      treeLayout(root);
+
+      // Get all nodes and links
+      const nodes = root.descendants();
+      const links = root.links();
+
+      // ========== LINKS ==========
+      const link = g.selectAll('.link')
+        .data(links, d => d.target.data.id);
+
+      // Enter
+      const linkEnter = link.enter()
+        .append('path')
+        .attr('class', 'link')
+        .attr('d', d => {
+          const o = { x: source.x0 || source.x, y: source.y0 || source.y };
+          return diagonal({ source: o, target: o });
+        });
+
+      // Update
+      link.merge(linkEnter)
+        .transition()
+        .duration(duration)
+        .attr('d', diagonal);
+
+      // Exit
+      link.exit()
+        .transition()
+        .duration(duration)
+        .attr('d', d => {
+          const o = { x: source.x, y: source.y };
+          return diagonal({ source: o, target: o });
+        })
+        .remove();
+
+      // ========== NODES ==========
+      const node = g.selectAll('.node')
+        .data(nodes, d => d.data.id);
+
+      // Enter
+      const nodeEnter = node.enter()
+        .append('g')
+        .attr('class', 'node')
+        .attr('transform', d => `translate(${source.x0 || source.x}, ${source.y0 || source.y})`)
+        .on('click', (event, d) => {
+          event.stopPropagation();
+          if (event.ctrlKey || event.metaKey) {
+            toggleNode(d);
+          } else {
+            selectNode(d);
+          }
+        })
+        .on('dblclick', (event, d) => {
+          event.stopPropagation();
+          toggleNode(d);
+        });
+
+      // Node card background
+      nodeEnter.append('rect')
+        .attr('class', 'node-card')
+        .attr('x', -nodeWidth / 2)
+        .attr('y', -nodeHeight / 2)
+        .attr('width', nodeWidth)
+        .attr('height', nodeHeight);
+
+      // Generation color bar
+      nodeEnter.append('rect')
+        .attr('class', d => `node-gen-bar gen-${Math.max(1, Math.min(14, d.data.generation || 1))}`)
+        .attr('x', -nodeWidth / 2)
+        .attr('y', -nodeHeight / 2)
+        .attr('width', nodeWidth)
+        .attr('height', 4);
+
+      // Gender indicator
+      nodeEnter.append('line')
+        .attr('class', d => `node-gender-indicator ${d.data.gender || 'male'}`)
+        .attr('x1', -nodeWidth / 2)
+        .attr('y1', -nodeHeight / 2 + 4)
+        .attr('x2', -nodeWidth / 2)
+        .attr('y2', nodeHeight / 2);
+
+      // Name
+      nodeEnter.append('text')
+        .attr('class', 'node-name')
+        .attr('y', -5)
+        .attr('text-anchor', 'middle')
+        .text(d => truncateName(d.data.name, 16));
+
+      // Info (generation)
+      nodeEnter.append('text')
+        .attr('class', 'node-info')
+        .attr('y', 12)
+        .attr('text-anchor', 'middle')
+        .text(d => {
+          let info = d.data.generation ? `Đời ${d.data.generation}` : '';
+          if (d.data.phai) info += ` · ${d.data.phai}`;
+          return info;
+        });
+
+      // Expand/collapse button (if has children)
+      const hasChildren = nodeEnter.filter(d => d.data._children || d.data.children);
+
+      hasChildren.append('circle')
+        .attr('class', 'node-expand-btn')
+        .attr('cy', nodeHeight / 2)
+        .attr('r', 10)
+        .on('click', (event, d) => {
+          event.stopPropagation();
+          toggleNode(d);
+        });
+
+      hasChildren.append('text')
+        .attr('class', 'node-children-count')
+        .attr('y', nodeHeight / 2 + 4)
+        .attr('text-anchor', 'middle')
+        .text(d => {
+          const count = (d.data._children || d.data.children || []).length;
+          return d.children ? '−' : `+${count}`;
+        });
+
+      // Update
+      const nodeUpdate = node.merge(nodeEnter);
+
+      nodeUpdate.transition()
+        .duration(duration)
+        .attr('transform', d => `translate(${d.x}, ${d.y})`);
+
+      // Update expand button text
+      nodeUpdate.select('.node-children-count')
+        .text(d => {
+          const count = (d.data._children || d.data.children || []).length;
+          return d.children ? '−' : count > 0 ? `+${count}` : '';
+        });
+
+      // Exit
+      node.exit()
+        .transition()
+        .duration(duration)
+        .attr('transform', d => `translate(${source.x}, ${source.y})`)
+        .remove();
+
+      // Store positions for next transition
+      nodes.forEach(d => {
+        d.x0 = d.x;
+        d.y0 = d.y;
+      });
+    }
+
+    // Diagonal path generator
+    function diagonal(d) {
+      return `M${d.source.x},${d.source.y + nodeHeight / 2}
+              C${d.source.x},${(d.source.y + d.target.y) / 2}
+               ${d.target.x},${(d.source.y + d.target.y) / 2}
+               ${d.target.x},${d.target.y - nodeHeight / 2}`;
+    }
+
+    // Truncate long names
+    function truncateName(name, maxLen) {
+      if (!name) return '';
+      return name.length > maxLen ? name.substring(0, maxLen - 2) + '...' : name;
+    }
+
+    // ==========================================
+    // NODE INTERACTIONS
+    // ==========================================
+    function toggleNode(d) {
+      if (d.children) {
+        d.data._children = d.data.children;
+        d.data.children = null;
+        d.children = null;
+      } else if (d.data._children) {
+        d.data.children = d.data._children;
+        // Rebuild children hierarchy
+        d.children = d.data.children.map(child => {
+          const node = d3.hierarchy(child);
+          node.parent = d;
+          node.depth = d.depth + 1;
+          return node;
+        });
+      } else {
+        // Load more children from full data
+        loadMoreChildren(d);
+      }
+
+      // Re-layout from root
+      root = d3.hierarchy(treeData);
+      update(d);
+    }
+
+    function loadMoreChildren(d) {
+      const person = familyData.persons[d.data.id];
+      if (!person || !person.children_ids) return;
+
+      const children = person.children_ids.map(childId => {
+        const child = familyData.persons[childId];
+        if (!child) return null;
+        return {
+          id: childId,
+          name: `${child.surname} ${child.name}`.trim(),
+          generation: child.generation,
+          gender: child.gender,
+          is_deceased: child.is_deceased,
+          phai: child.phai,
+          _children: null,
+          children: null,
+          data: child
+        };
+      }).filter(Boolean);
+
+      if (children.length > 0) {
+        d.data.children = children;
+        d.data._children = null;
+      }
+    }
+
+    function selectNode(d) {
+      // Deselect previous
+      g.selectAll('.node').classed('selected', false);
+
+      // Select new
+      selectedNode = d;
+      g.selectAll('.node')
+        .filter(n => n.data.id === d.data.id)
+        .classed('selected', true);
+
+      // Show detail panel
+      showDetailPanel(d.data);
+    }
+
+    function focusNode(nodeId) {
+      // Find node in tree
+      const nodes = root.descendants();
+      const targetNode = nodes.find(n => n.data.id === nodeId);
+
+      if (targetNode) {
+        selectNode(targetNode);
+        centerOnNode(targetNode);
+      }
+    }
+
+    function focusSelectedNode() {
+      if (selectedNode) {
+        centerOnNode(selectedNode);
+        closeDetailPanel();
+      }
+    }
+
+    function centerOnNode(node) {
+      const container = document.getElementById('tree-container');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const transform = d3.zoomIdentity
+        .translate(width / 2 - node.x, height / 2 - node.y)
+        .scale(1);
+
+      svg.transition()
+        .duration(750)
+        .call(zoom.transform, transform);
+    }
+
+    // ==========================================
+    // DETAIL PANEL
+    // ==========================================
+    function showDetailPanel(nodeData) {
+      const panel = document.getElementById('detail-panel');
+      const person = familyData.persons[nodeData.id];
+
+      if (!person) return;
+
+      // Update content
+      document.getElementById('detail-name').textContent = `${person.surname} ${person.name}`.trim();
+
+      let subtitle = person.generation ? `Đời thứ ${person.generation}` : '';
+      if (person.phai) subtitle += ` · Phái ${person.phai}`;
+      if (nodeData.id === 'START') subtitle += ' · Thủy tổ';
+      document.getElementById('detail-subtitle').textContent = subtitle;
+
+      // Birth
+      const birthEl = document.getElementById('detail-birth').querySelector('span');
+      if (person.birth_date && person.birth_date.display) {
+        birthEl.textContent = `Sinh: ${person.birth_date.display}`;
+      } else {
+        birthEl.textContent = 'Sinh: Không rõ';
+      }
+
+      // Gender
+      const genderEl = document.getElementById('detail-gender').querySelector('span');
+      genderEl.textContent = `Giới tính: ${person.gender === 'male' ? 'Nam' : person.gender === 'female' ? 'Nữ' : 'Không rõ'}`;
+
+      // Status
+      const statusEl = document.getElementById('detail-status').querySelector('span');
+      statusEl.textContent = `Trạng thái: ${person.is_deceased ? 'Đã mất' : 'Còn sống'}`;
+
+      // Family links
+      const familyEl = document.getElementById('detail-family');
+      familyEl.innerHTML = '';
+
+      // Father
+      if (person.father_id && familyData.persons[person.father_id]) {
+        const father = familyData.persons[person.father_id];
+        familyEl.innerHTML += `
+          <div class="detail-link" onclick="focusNode('${person.father_id}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1fba5e" stroke-width="2">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Cha: ${father.surname} ${father.name}</span>
+          </div>
+        `;
+      }
+
+      // Mother
+      if (person.mother_id && familyData.persons[person.mother_id]) {
+        const mother = familyData.persons[person.mother_id];
+        familyEl.innerHTML += `
+          <div class="detail-link" onclick="focusNode('${person.mother_id}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c44d4d" stroke-width="2">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Mẹ: ${mother.surname} ${mother.name}</span>
+          </div>
+        `;
+      }
+
+      // Spouses
+      (person.spouse_ids || []).forEach(spouseId => {
+        if (familyData.persons[spouseId]) {
+          const spouse = familyData.persons[spouseId];
+          familyEl.innerHTML += `
+            <div class="detail-link" onclick="focusNode('${spouseId}')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+              </svg>
+              <span>Vợ/Chồng: ${spouse.surname} ${spouse.name}</span>
+            </div>
+          `;
+        }
+      });
+
+      // Children
+      (person.children_ids || []).slice(0, 10).forEach(childId => {
+        if (familyData.persons[childId]) {
+          const child = familyData.persons[childId];
+          const color = child.gender === 'male' ? '#1fba5e' : '#c44d4d';
+          familyEl.innerHTML += `
+            <div class="detail-link" onclick="focusNode('${childId}')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m8 12 2 2 4-4"></path>
+              </svg>
+              <span>Con: ${child.name} ${child.surname}</span>
+            </div>
+          `;
+        }
+      });
+
+      if ((person.children_ids || []).length > 10) {
+        familyEl.innerHTML += `<div style="font-size: 0.8rem; color: #9a8467; padding: 8px;">... và ${person.children_ids.length - 10} con khác</div>`;
+      }
+
+      // Notes
+      if (person.notes) {
+        document.getElementById('detail-notes-section').style.display = 'block';
+        document.getElementById('detail-notes').textContent = person.notes;
+      } else {
+        document.getElementById('detail-notes-section').style.display = 'none';
+      }
+
+      // Show panel
+      panel.classList.add('open');
+    }
+
+    function closeDetailPanel() {
+      document.getElementById('detail-panel').classList.remove('open');
+    }
+
+    // ==========================================
+    // SEARCH
+    // ==========================================
+    function setupSearch() {
+      const input = document.getElementById('search-input');
+      const results = document.getElementById('search-results');
+
+      let debounceTimer;
+
+      input.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          const query = e.target.value.toLowerCase().trim();
+
+          if (query.length < 2) {
+            results.innerHTML = '';
+            return;
+          }
+
+          const matches = Object.values(familyData.persons)
+            .filter(p => {
+              const fullName = `${p.surname} ${p.name}`.toLowerCase();
+              return fullName.includes(query);
+            })
+            .slice(0, 20);
+
+          results.innerHTML = matches.map(p => `
+            <div class="search-result" onclick="focusNode('${p.id}'); document.getElementById('search-input').value = '';">
+              <div class="search-result-name">${p.surname} ${p.name}</div>
+              <div class="search-result-info">
+                ${p.generation ? `Đời ${p.generation}` : ''}
+                ${p.phai ? ` · Phái ${p.phai}` : ''}
+                ${p.is_deceased ? ' · Đã mất' : ''}
+              </div>
+            </div>
+          `).join('');
+
+        }, 300);
+      });
+    }
+
+    // ==========================================
+    // MINI MAP
+    // ==========================================
+    function updateMiniMap(transform) {
+      // Simplified mini map update
+      const miniSvg = d3.select('#mini-map-svg');
+      miniSvg.selectAll('*').remove();
+
+      // Draw simplified tree representation
+      miniSvg.append('rect')
+        .attr('class', 'mini-map-viewport')
+        .attr('x', 50 - transform.x / 20)
+        .attr('y', 30 - transform.y / 20)
+        .attr('width', 50 / transform.k)
+        .attr('height', 40 / transform.k);
+    }
+
+    // ==========================================
+    // CONTROLS
+    // ==========================================
+    function setupControls() {
+      // Zoom
+      document.getElementById('zoom-in').addEventListener('click', () => {
+        svg.transition().call(zoom.scaleBy, 1.3);
+      });
+
+      document.getElementById('zoom-out').addEventListener('click', () => {
+        svg.transition().call(zoom.scaleBy, 0.7);
+      });
+
+      document.getElementById('reset-view').addEventListener('click', () => {
+        focusNode('START');
+      });
+
+      // Expand/Collapse all
+      document.getElementById('expand-all').addEventListener('click', () => {
+        expandAll(root);
+        root = d3.hierarchy(treeData);
+        update(root);
+      });
+
+      document.getElementById('collapse-all').addEventListener('click', () => {
+        collapseAll(root);
+        root = d3.hierarchy(treeData);
+        update(root);
+      });
+
+      // Toggle sidebar
+      document.getElementById('toggle-sidebar').addEventListener('click', () => {
+        document.getElementById('sidebar').classList.toggle('collapsed');
+        document.getElementById('tree-container').classList.toggle('expanded');
+      });
+
+      // Filter chips
+      document.querySelectorAll('.filter-chip').forEach(chip => {
+        chip.addEventListener('click', function() {
+          const parent = this.parentElement;
+          parent.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          // Apply filter logic here
+        });
+      });
+    }
+
+    function expandAll(node) {
+      if (node.data._children) {
+        node.data.children = node.data._children;
+        node.data._children = null;
+      }
+      if (node.children) {
+        node.children.forEach(expandAll);
+      }
+    }
+
+    function collapseAll(node) {
+      if (node.children && node.depth > 0) {
+        node.data._children = node.data.children;
+        node.data.children = null;
+      }
+      if (node.children) {
+        node.children.forEach(collapseAll);
+      }
+    }
+
+    // ==========================================
+    // WINDOW RESIZE
+    // ==========================================
+    window.addEventListener('resize', () => {
+      const container = document.getElementById('tree-container');
+      svg.attr('width', container.clientWidth)
+         .attr('height', container.clientHeight);
+    });
+
+    // ==========================================
+    // INIT
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      loadData();
+      setupSearch();
+      setupControls();
+    });
+  </script>
+
+</body>
+</html>
