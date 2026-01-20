@@ -1207,13 +1207,105 @@
     }
 
     function focusNode(nodeId) {
-      // Find node in tree
-      const nodes = root.descendants();
-      const targetNode = nodes.find(n => n.data.id === nodeId);
+      // First check if node is already visible in tree
+      let nodes = root.descendants();
+      let targetNode = nodes.find(n => n.data.id === nodeId);
 
       if (targetNode) {
         selectNode(targetNode);
         centerOnNode(targetNode);
+        return;
+      }
+
+      // Node not visible - need to find path and expand ancestors
+      const person = familyData.persons[nodeId];
+      if (!person) return;
+
+      // Build path from root to target by tracing parent IDs
+      const path = [];
+      let currentId = nodeId;
+
+      while (currentId) {
+        path.unshift(currentId);
+        const current = familyData.persons[currentId];
+        if (!current) break;
+        // Prefer father_id for tracing lineage, fallback to mother_id
+        currentId = current.father_id || current.mother_id;
+        // Prevent infinite loop
+        if (path.length > 20) break;
+      }
+
+      // If path doesn't start with START, prepend it
+      if (path[0] !== 'START' && familyData.persons['START']) {
+        path.unshift('START');
+      }
+
+      // Expand nodes along the path
+      expandPath(treeData, path, 0);
+
+      // Rebuild hierarchy and update tree
+      root = d3.hierarchy(treeData);
+      update(root);
+
+      // After update, find and select the node
+      setTimeout(() => {
+        nodes = root.descendants();
+        targetNode = nodes.find(n => n.data.id === nodeId);
+        if (targetNode) {
+          selectNode(targetNode);
+          centerOnNode(targetNode);
+        }
+      }, 600);
+    }
+
+    function expandPath(node, path, index) {
+      if (!node || index >= path.length) return;
+
+      const currentId = path[index];
+
+      // If this is the node we're looking for
+      if (node.id === currentId) {
+        // If there are more nodes in the path, expand this node's children
+        if (index < path.length - 1) {
+          // Load children if not loaded
+          if (!node.children && !node._children) {
+            const person = familyData.persons[node.id];
+            if (person && person.children_ids) {
+              const children = person.children_ids.map(childId => {
+                const child = familyData.persons[childId];
+                if (!child) return null;
+                return {
+                  id: childId,
+                  name: `${child.surname} ${child.name}`.trim(),
+                  generation: child.generation,
+                  gender: child.gender,
+                  is_deceased: child.is_deceased,
+                  phai: child.phai,
+                  _children: null,
+                  children: null,
+                  data: child
+                };
+              }).filter(Boolean);
+
+              node.children = children;
+            }
+          }
+
+          // Expand if collapsed
+          if (node._children && !node.children) {
+            node.children = node._children;
+            node._children = null;
+          }
+
+          // Continue expanding next node in path
+          if (node.children) {
+            const nextId = path[index + 1];
+            const nextNode = node.children.find(c => c.id === nextId);
+            if (nextNode) {
+              expandPath(nextNode, path, index + 1);
+            }
+          }
+        }
       }
     }
 
@@ -1358,6 +1450,14 @@
     // ==========================================
     // SEARCH
     // ==========================================
+    function selectSearchResult(personId) {
+      // Clear search
+      document.getElementById('search-input').value = '';
+      document.getElementById('search-results').innerHTML = '';
+      // Navigate to person
+      focusNode(personId);
+    }
+
     function setupSearch() {
       const input = document.getElementById('search-input');
       const results = document.getElementById('search-results');
@@ -1382,7 +1482,7 @@
             .slice(0, 20);
 
           results.innerHTML = matches.map(p => `
-            <div class="search-result" onclick="focusNode('${p.id}'); document.getElementById('search-input').value = '';">
+            <div class="search-result" onclick="selectSearchResult('${p.id}')">
               <div class="search-result-name">${p.surname} ${p.name}</div>
               <div class="search-result-info">
                 ${p.generation ? `Đời ${p.generation}` : ''}

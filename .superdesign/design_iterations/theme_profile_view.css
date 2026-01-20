@@ -1,0 +1,98 @@
+/* Vietnamese Heritage Theme - Profile View */
+:root {
+  /* Primary - Burgundy (Vietnamese Royal) */
+  --primary-50: #fdf2f2;
+  --primary-100: #fce4e4;
+  --primary-200: #fababa;
+  --primary-300: #f58a8a;
+  --primary-400: #c44d4d;
+  --primary-500: #8b2525;
+  --primary-600: #731f1f;
+  --primary-700: #5c1919;
+  --primary-800: #4a1414;
+  --primary-900: #3d1010;
+
+  /* Secondary - Gold (Prosperity) */
+  --secondary-50: #fdfcf5;
+  --secondary-100: #faf6e6;
+  --secondary-200: #f5ecc7;
+  --secondary-300: #eddc9a;
+  --secondary-400: #e2c564;
+  --secondary-500: #d4af37;
+  --secondary-600: #b8952c;
+  --secondary-700: #967623;
+  --secondary-800: #785e1c;
+  --secondary-900: #5a4615;
+
+  /* Accent - Jade Green */
+  --accent-500: #1fba5e;
+  --accent-600: #149a4a;
+
+  /* Warm Neutrals */
+  --warm-50: #fdfcfa;
+  --warm-100: #f9f6f1;
+  --warm-200: #f2ebe0;
+  --warm-300: #e8dcc9;
+  --warm-400: #d4c4a8;
+  --warm-500: #b8a383;
+  --warm-600: #9a8467;
+  --warm-700: #7d6a52;
+  --warm-800: #665544;
+  --warm-900: #544739;
+
+  /* Semantic */
+  --background: var(--warm-50);
+  --foreground: var(--warm-900);
+  --card-bg: #ffffff;
+  --card-border: var(--warm-300);
+  --muted: var(--warm-600);
+  --male-color: var(--accent-500);
+  --female-color: var(--primary-400);
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(84, 71, 57, 0.05);
+  --shadow-md: 0 4px 12px rgba(84, 71, 57, 0.08);
+  --shadow-lg: 0 8px 24px rgba(84, 71, 57, 0.12);
+  --shadow-xl: 0 16px 48px rgba(84, 71, 57, 0.16);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* Generation Colors (14 generations) */
+.gen-1 { --gen-color: #3d1010; }
+.gen-2 { --gen-color: #4a1414; }
+.gen-3 { --gen-color: #5c1919; }
+.gen-4 { --gen-color: #731f1f; }
+.gen-5 { --gen-color: #8b2525; }
+.gen-6 { --gen-color: #a03030; }
+.gen-7 { --gen-color: #b54040; }
+.gen-8 { --gen-color: #c55555; }
+.gen-9 { --gen-color: #d57070; }
+.gen-10 { --gen-color: #e08888; }
+.gen-11 { --gen-color: #e8a0a0; }
+.gen-12 { --gen-color: #f0b8b8; }
+.gen-13 { --gen-color: #f5d0d0; }
+.gen-14 { --gen-color: #fae8e8; }

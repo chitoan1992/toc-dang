@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Phả đồ Tộc Đặng Non Nước - Tra cứu thông tin thành viên gia tộc">
+  <title>Tộc Đặng Non Nước | Tra Cứu Gia Phả</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- D3.js (for optional tree view) -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'body': ['Source Sans 3', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            primary: {
+              50: '#fdf2f2', 100: '#fce4e4', 200: '#fababa', 300: '#f58a8a',
+              400: '#c44d4d', 500: '#8b2525', 600: '#731f1f', 700: '#5c1919',
+              800: '#4a1414', 900: '#3d1010',
+            },
+            secondary: {
+              50: '#fdfcf5', 100: '#faf6e6', 200: '#f5ecc7', 300: '#eddc9a',
+              400: '#e2c564', 500: '#d4af37', 600: '#b8952c', 700: '#967623',
+              800: '#785e1c', 900: '#5a4615',
+            },
+            accent: {
+              500: '#1fba5e', 600: '#149a4a',
+            },
+            warm: {
+              50: '#fdfcfa', 100: '#f9f6f1', 200: '#f2ebe0', 300: '#e8dcc9',
+              400: '#d4c4a8', 500: '#b8a383', 600: '#9a8467', 700: '#7d6a52',
+              800: '#665544', 900: '#544739',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', system-ui, sans-serif !important;
+      background-color: #fdfcfa !important;
+      color: #544739 !important;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif !important;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #4a1414 0%, #731f1f 100%);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #d4af37 0%, #b8952c 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #3d1010;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .logo-text .gold {
+      color: #d4af37;
+    }
+
+    .header-stats {
+      display: flex;
+      gap: 24px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+    }
+
+    .header-stats strong {
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+
+    /* Search Section */
+    .search-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .search-title {
+      font-size: 1.1rem;
+      color: #7d6a52;
+      margin-bottom: 16px;
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 16px 20px 16px 52px;
+      font-size: 1.1rem;
+      border: 2px solid #e8dcc9;
+      border-radius: 12px;
+      background: #fff;
+      color: #544739;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(84,71,57,0.06);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: #8b2525;
+      box-shadow: 0 0 0 4px rgba(139,37,37,0.1), 0 4px 12px rgba(84,71,57,0.1);
+    }
+
+    .search-input::placeholder {
+      color: #b8a383;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9a8467;
+      pointer-events: none;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: #e8dcc9;
+      border-radius: 50%;
+      color: #7d6a52;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .search-clear:hover {
+      background: #8b2525;
+      color: #fff;
+    }
+
+    .search-clear.visible {
+      display: flex;
+    }
+
+    /* Search Results Dropdown */
+    .search-results {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid #e8dcc9;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(84,71,57,0.15);
+      max-height: 400px;
+      overflow-y: auto;
+      z-index: 100;
+      display: none;
+    }
+
+    .search-results.visible {
+      display: block;
+      animation: resultsShow 0.3s ease-out;
+    }
+
+    @keyframes resultsShow {
+      from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .search-result {
+      padding: 14px 18px;
+      cursor: pointer;
+      border-bottom: 1px solid #f2ebe0;
+      transition: all 0.15s ease;
+    }
+
+    .search-result:last-child {
+      border-bottom: none;
+    }
+
+    .search-result:hover {
+      background: #f9f6f1;
+      padding-left: 22px;
+    }
+
+    .search-result-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #3d1010;
+      font-size: 1rem;
+    }
+
+    .search-result-info {
+      font-size: 0.85rem;
+      color: #9a8467;
+      margin-top: 2px;
+    }
+
+    .search-result-count {
+      padding: 12px 18px;
+      font-size: 0.85rem;
+      color: #9a8467;
+      border-bottom: 1px solid #f2ebe0;
+      background: #fdfcfa;
+    }
+
+    /* Welcome State */
+    .welcome-state {
+      text-align: center;
+      padding: 60px 20px;
+      animation: profileEnter 0.4s ease-out;
+    }
+
+    .welcome-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #f5ecc7 0%, #eddc9a 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: #967623;
+    }
+
+    .welcome-title {
+      font-size: 1.5rem;
+      color: #3d1010;
+      margin-bottom: 12px;
+    }
+
+    .welcome-text {
+      color: #7d6a52;
+      max-width: 400px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Profile Card */
+    .profile-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(84,71,57,0.1);
+      overflow: hidden;
+      animation: profileEnter 0.4s ease-out;
+    }
+
+    @keyframes profileEnter {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .profile-header {
+      background: linear-gradient(135deg, #5c1919 0%, #731f1f 100%);
+      padding: 32px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .profile-gen-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(212,175,55,0.2);
+      color: #d4af37;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+
+    .profile-avatar {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #e8dcc9 0%, #d4c4a8 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      border: 4px solid rgba(212,175,55,0.4);
+      color: #9a8467;
+    }
+
+    .profile-avatar.male {
+      border-color: rgba(31,186,94,0.5);
+    }
+
+    .profile-avatar.female {
+      border-color: rgba(196,77,77,0.5);
+    }
+
+    .profile-name {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .profile-subtitle {
+      opacity: 0.85;
+      font-size: 1rem;
+    }
+
+    .profile-subtitle .divider {
+      margin: 0 8px;
+      opacity: 0.5;
+    }
+
+    .profile-content {
+      padding: 28px;
+    }
+
+    .profile-section {
+      margin-bottom: 28px;
+    }
+
+    .profile-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9a8467;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f2ebe0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Info Grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #fdfcfa;
+      border-radius: 10px;
+      border: 1px solid #f2ebe0;
+    }
+
+    .info-icon {
+      width: 36px;
+      height: 36px;
+      background: #f2ebe0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7d6a52;
+      flex-shrink: 0;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      color: #9a8467;
+      margin-bottom: 2px;
+    }
+
+    .info-value {
+      font-weight: 600;
+      color: #3d1010;
+    }
+
+    /* Family Cards */
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .family-card {
+      background: #fdfcfa;
+      border: 1px solid #e8dcc9;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .family-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(84,71,57,0.12);
+      border-color: #8b2525;
+    }
+
+    .family-card:active {
+      transform: scale(0.97);
+    }
+
+    .family-card-avatar {
+      width: 48px;
+      height: 48px;
+      background: #e8dcc9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      color: #9a8467;
+    }
+
+    .family-card-avatar.male {
+      background: rgba(31,186,94,0.15);
+      color: #149a4a;
+    }
+
+    .family-card-avatar.female {
+      background: rgba(196,77,77,0.15);
+      color: #c44d4d;
+    }
+
+    .family-card-relation {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9a8467;
+      margin-bottom: 4px;
+    }
+
+    .family-card-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #3d1010;
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .family-card-gen {
+      font-size: 0.75rem;
+      color: #b8a383;
+      margin-top: 4px;
+    }
+
+    /* Parents Row */
+    .parents-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .parent-card {
+      background: #fdfcfa;
+      border: 1px solid #e8dcc9;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .parent-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(84,71,57,0.12);
+      border-color: #8b2525;
+    }
+
+    .parent-card-avatar {
+      width: 56px;
+      height: 56px;
+      background: #e8dcc9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .parent-card-avatar.male {
+      background: rgba(31,186,94,0.15);
+      color: #149a4a;
+    }
+
+    .parent-card-avatar.female {
+      background: rgba(196,77,77,0.15);
+      color: #c44d4d;
+    }
+
+    .parent-card-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .parent-card-relation {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9a8467;
+      margin-bottom: 4px;
+    }
+
+    .parent-card-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      color: #3d1010;
+      font-size: 1.05rem;
+    }
+
+    /* Spouse Card */
+    .spouse-card {
+      background: linear-gradient(135deg, #fdfcf5 0%, #faf6e6 100%);
+      border: 1px solid #eddc9a;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 20px;
+    }
+
+    .spouse-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(212,175,55,0.2);
+    }
+
+    /* Notes */
+    .notes-content {
+      background: #fdfcfa;
+      border: 1px solid #f2ebe0;
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #665544;
+    }
+
+    /* Tree Button */
+    .tree-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #8b2525 0%, #731f1f 100%);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-top: 24px;
+    }
+
+    .tree-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(139,37,37,0.3);
+    }
+
+    /* Tree Modal */
+    .tree-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .tree-modal.visible {
+      display: flex;
+      animation: modalBgIn 0.35s ease-out;
+    }
+
+    @keyframes modalBgIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .tree-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(61,16,16,0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    .tree-modal-content {
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      height: 80vh;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.3);
+      overflow: hidden;
+      animation: modalContentIn 0.35s ease-out;
+    }
+
+    @keyframes modalContentIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .tree-modal-header {
+      background: linear-gradient(135deg, #4a1414 0%, #5c1919 100%);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .tree-modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .tree-modal-close {
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s ease;
+    }
+
+    .tree-modal-close:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    .tree-modal-body {
+      height: calc(100% - 68px);
+      position: relative;
+    }
+
+    #tree-svg {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+
+    #tree-svg:active {
+      cursor: grabbing;
+    }
+
+    /* Tree Nodes */
+    .node { cursor: pointer; }
+    .node-card { fill: #fff; stroke: #e8dcc9; stroke-width: 2; rx: 8; transition: all 0.2s; }
+    .node:hover .node-card { stroke: #8b2525; filter: drop-shadow(0 4px 12px rgba(139,37,37,0.15)); }
+    .node.selected .node-card { stroke: #d4af37; stroke-width: 3; filter: drop-shadow(0 0 12px rgba(212,175,55,0.5)); }
+    .node-gen-bar { rx: 8 8 0 0; }
+    .node-name { font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 600; fill: #3d1010; }
+    .node-info { font-family: 'Source Sans 3', sans-serif; font-size: 10px; fill: #9a8467; }
+    .link { fill: none; stroke: #d4c4a8; stroke-width: 2; }
+
+    /* Generation Colors */
+    .gen-1 { fill: #3d1010; } .gen-2 { fill: #4a1414; } .gen-3 { fill: #5c1919; }
+    .gen-4 { fill: #731f1f; } .gen-5 { fill: #8b2525; } .gen-6 { fill: #a03030; }
+    .gen-7 { fill: #b54040; } .gen-8 { fill: #c55555; } .gen-9 { fill: #d57070; }
+    .gen-10 { fill: #e08888; } .gen-11 { fill: #e8a0a0; } .gen-12 { fill: #f0b8b8; }
+    .gen-13 { fill: #f5d0d0; } .gen-14 { fill: #fae8e8; }
+
+    /* Tree Controls */
+    .tree-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      background: rgba(255,255,255,0.95);
+      padding: 8px 16px;
+      border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .tree-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid #d4c4a8;
+      background: #fff;
+      color: #7d6a52;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tree-btn:hover {
+      background: #8b2525;
+      border-color: #8b2525;
+      color: #fff;
+    }
+
+    /* Loading */
+    .loading-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+    }
+
+    .loading-spinner {
+      width: 48px;
+      height: 48px;
+      border: 3px solid #e8dcc9;
+      border-top-color: #8b2525;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-stats { display: none; }
+      .header-inner { padding: 0 8px; }
+      .main-container { padding: 20px 16px; }
+      .profile-header { padding: 24px 20px; }
+      .profile-content { padding: 20px; }
+      .parents-row { grid-template-columns: 1fr; }
+      .family-grid { grid-template-columns: repeat(2, 1fr); }
+      .tree-modal-content { height: 90vh; border-radius: 12px; }
+    }
+
+    /* Empty children state */
+    .empty-state {
+      text-align: center;
+      padding: 24px;
+      color: #9a8467;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo" onclick="showWelcome(); return false;">
+        <div class="logo-icon">Đ</div>
+        <div class="logo-text">Tộc Đặng <span class="gold">Non Nước</span></div>
+      </a>
+      <div class="header-stats">
+        <span><strong id="stat-total">0</strong> thành viên</span>
+        <span><strong id="stat-gen">14</strong> thế hệ</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <!-- Search Section -->
+    <section class="search-section">
+      <p class="search-title">Tìm kiếm thành viên trong gia tộc</p>
+      <div class="search-wrapper">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="Nhập tên người cần tìm..." autocomplete="off">
+        <button class="search-clear" id="search-clear">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </section>
+
+    <!-- Content Area -->
+    <div id="content-area">
+      <!-- Loading State -->
+      <div class="loading-state" id="loading-state">
+        <div class="loading-spinner"></div>
+        <div style="color: #7d6a52;">Đang tải dữ liệu gia phả...</div>
+      </div>
+
+      <!-- Welcome State (hidden initially) -->
+      <div class="welcome-state" id="welcome-state" style="display: none;">
+        <div class="welcome-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h2 class="welcome-title">Chào mừng đến Gia Phả</h2>
+        <p class="welcome-text">Nhập tên thành viên vào ô tìm kiếm phía trên để xem thông tin chi tiết và mối quan hệ gia đình.</p>
+      </div>
+
+      <!-- Profile Card (hidden initially) -->
+      <div class="profile-card" id="profile-card" style="display: none;">
+        <div class="profile-header">
+          <div class="profile-gen-badge" id="profile-gen-badge">Đời 1</div>
+          <div class="profile-avatar" id="profile-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h1 class="profile-name" id="profile-name">-</h1>
+          <p class="profile-subtitle" id="profile-subtitle">-</p>
+        </div>
+        <div class="profile-content">
+          <!-- Basic Info -->
+          <section class="profile-section">
+            <h3 class="section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              Thông tin cơ bản
+            </h3>
+            <div class="info-grid" id="info-grid"></div>
+          </section>
+
+          <!-- Family Section -->
+          <section class="profile-section" id="family-section">
+            <h3 class="section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              Gia đình
+            </h3>
+            <div id="family-content"></div>
+          </section>
+
+          <!-- Notes Section -->
+          <section class="profile-section" id="notes-section" style="display: none;">
+            <h3 class="section-title">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              Ghi chú
+            </h3>
+            <div class="notes-content" id="notes-content"></div>
+          </section>
+
+          <!-- Tree Button -->
+          <button class="tree-button" onclick="openTreeModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22v-5"></path>
+              <path d="M9 7V2"></path>
+              <path d="M15 7V2"></path>
+              <path d="M6 13V8a6 6 0 0 1 12 0v5"></path>
+              <circle cx="12" cy="17" r="5"></circle>
+            </svg>
+            Xem trên Phả Đồ
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Tree Modal -->
+  <div class="tree-modal" id="tree-modal">
+    <div class="tree-modal-backdrop" onclick="closeTreeModal()"></div>
+    <div class="tree-modal-content">
+      <div class="tree-modal-header">
+        <span class="tree-modal-title">Phả Đồ Gia Tộc</span>
+        <button class="tree-modal-close" onclick="closeTreeModal()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="tree-modal-body">
+        <svg id="tree-svg"></svg>
+        <div class="tree-controls">
+          <button class="tree-btn" id="zoom-out" title="Thu nhỏ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </button>
+          <button class="tree-btn" id="zoom-in" title="Phóng to">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="11" x2="11" y1="8" y2="14"></line>
+              <line x1="8" x2="14" y1="11" y2="11"></line>
+            </svg>
+          </button>
+          <button class="tree-btn" id="reset-view" title="Về giữa">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 2v4m0 12v4M2 12h4m12 0h4"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // GLOBAL STATE
+    // ==========================================
+    let familyData = null;
+    let photosMap = null;
+    let currentPersonId = null;
+    let treeInitialized = false;
+    let svg, g, zoom, root, treeData;
+    const nodeWidth = 140;
+    const nodeHeight = 60;
+
+    // ==========================================
+    // LOAD DATA
+    // ==========================================
+    async function loadData() {
+      try {
+        // Load family data and photos map in parallel
+        const [dataResponse, photosResponse] = await Promise.all([
+          fetch('../../family_data.json'),
+          fetch('../../photos_map.json').catch(() => null)
+        ]);
+
+        familyData = await dataResponse.json();
+
+        // Load photos map if available
+        if (photosResponse && photosResponse.ok) {
+          photosMap = await photosResponse.json();
+          console.log(`Loaded ${Object.keys(photosMap).length} photos`);
+        }
+
+        // Update stats
+        document.getElementById('stat-total').textContent = familyData.metadata.total_members.toLocaleString();
+
+        // Hide loading, show welcome
+        document.getElementById('loading-state').style.display = 'none';
+        document.getElementById('welcome-state').style.display = 'block';
+
+      } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('loading-state').innerHTML = `
+          <div style="color: #c44d4d; text-align: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: 16px;">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" x2="12" y1="8" y2="12"></line>
+              <line x1="12" x2="12.01" y1="16" y2="16"></line>
+            </svg>
+            <div>Không thể tải dữ liệu</div>
+            <div style="font-size: 0.85rem; margin-top: 8px; color: #9a8467;">Vui lòng chạy convert_to_json.py trước</div>
+          </div>
+        `;
+      }
+    }
+
+    // ==========================================
+    // SEARCH
+    // ==========================================
+    function setupSearch() {
+      const input = document.getElementById('search-input');
+      const results = document.getElementById('search-results');
+      const clearBtn = document.getElementById('search-clear');
+
+      let debounceTimer;
+
+      input.addEventListener('input', (e) => {
+        const query = e.target.value;
+        clearBtn.classList.toggle('visible', query.length > 0);
+
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          const q = query.toLowerCase().trim();
+
+          if (q.length < 2) {
+            results.classList.remove('visible');
+            results.innerHTML = '';
+            return;
+          }
+
+          const matches = Object.values(familyData.persons)
+            .filter(p => {
+              const fullName = `${p.surname} ${p.name}`.toLowerCase();
+              return fullName.includes(q);
+            })
+            .slice(0, 30);
+
+          if (matches.length === 0) {
+            results.innerHTML = '<div class="search-result-count">Không tìm thấy kết quả</div>';
+          } else {
+            results.innerHTML = `
+              <div class="search-result-count">Tìm thấy ${matches.length}${matches.length === 30 ? '+' : ''} kết quả</div>
+              ${matches.map(p => {
+                const hasPhoto = photosMap && photosMap[p.id];
+                return `
+                <div class="search-result" onclick="selectPerson('${p.id}')" style="display: flex; align-items: center; gap: 12px;">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: ${p.gender === 'male' ? 'rgba(31,186,94,0.15)' : p.gender === 'female' ? 'rgba(196,77,77,0.15)' : '#e8dcc9'}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden;">
+                    ${hasPhoto
+                      ? `<img src="${photosMap[p.id]}" alt="" style="width: 100%; height: 100%; object-fit: cover;">`
+                      : `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="${p.gender === 'male' ? '#149a4a' : p.gender === 'female' ? '#c44d4d' : '#9a8467'}" stroke-width="2">
+                          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                        </svg>`
+                    }
+                  </div>
+                  <div style="flex: 1; min-width: 0;">
+                    <div class="search-result-name">${p.surname} ${p.name}</div>
+                    <div class="search-result-info">
+                      ${p.generation ? `Đời ${p.generation}` : ''}
+                      ${p.phai ? ` · Phái ${p.phai}` : ''}
+                      ${p.gender === 'male' ? ' · Nam' : p.gender === 'female' ? ' · Nữ' : ''}
+                    </div>
+                  </div>
+                </div>
+              `}).join('')}
+            `;
+          }
+
+          results.classList.add('visible');
+        }, 200);
+      });
+
+      input.addEventListener('focus', () => {
+        if (input.value.length >= 2) {
+          results.classList.add('visible');
+        }
+      });
+
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        clearBtn.classList.remove('visible');
+        results.classList.remove('visible');
+        results.innerHTML = '';
+        input.focus();
+      });
+
+      // Close results when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-wrapper')) {
+          results.classList.remove('visible');
+        }
+      });
+    }
+
+    // ==========================================
+    // SELECT PERSON & SHOW PROFILE
+    // ==========================================
+    function selectPerson(personId) {
+      const person = familyData.persons[personId];
+      if (!person) return;
+
+      currentPersonId = personId;
+
+      // Clear search
+      document.getElementById('search-input').value = '';
+      document.getElementById('search-clear').classList.remove('visible');
+      document.getElementById('search-results').classList.remove('visible');
+
+      // Hide welcome, show profile
+      document.getElementById('welcome-state').style.display = 'none';
+      document.getElementById('profile-card').style.display = 'block';
+
+      // Re-trigger animation
+      const card = document.getElementById('profile-card');
+      card.style.animation = 'none';
+      card.offsetHeight; // Trigger reflow
+      card.style.animation = 'profileEnter 0.4s ease-out';
+
+      // Update profile header
+      const fullName = `${person.surname} ${person.name}`.trim();
+      document.getElementById('profile-name').textContent = fullName;
+      document.getElementById('profile-gen-badge').textContent = person.generation ? `Đời ${person.generation}` : 'Chưa rõ đời';
+
+      // Subtitle
+      let subtitle = [];
+      if (person.phai) subtitle.push(`Phái ${person.phai}`);
+      if (person.gender === 'male') subtitle.push('Nam');
+      else if (person.gender === 'female') subtitle.push('Nữ');
+      document.getElementById('profile-subtitle').innerHTML = subtitle.join('<span class="divider">·</span>');
+
+      // Avatar
+      const avatar = document.getElementById('profile-avatar');
+      avatar.className = 'profile-avatar ' + (person.gender || '');
+
+      // Check if person has a photo
+      if (photosMap && photosMap[personId]) {
+        avatar.innerHTML = `<img src="${photosMap[personId]}" alt="${fullName}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`;
+      } else {
+        avatar.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        `;
+      }
+
+      // Basic Info Grid
+      const infoGrid = document.getElementById('info-grid');
+      let infoHTML = '';
+
+      // Birth
+      const birthDate = person.birth_date?.display || 'Không rõ';
+      infoHTML += `
+        <div class="info-item">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+              <line x1="16" x2="16" y1="2" y2="6"></line>
+              <line x1="8" x2="8" y1="2" y2="6"></line>
+              <line x1="3" x2="21" y1="10" y2="10"></line>
+            </svg>
+          </div>
+          <div>
+            <div class="info-label">Ngày sinh</div>
+            <div class="info-value">${birthDate}</div>
+          </div>
+        </div>
+      `;
+
+      // Death
+      if (person.is_deceased) {
+        const deathDate = person.death_date?.display || 'Không rõ ngày';
+        infoHTML += `
+          <div class="info-item">
+            <div class="info-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="info-label">Ngày mất</div>
+              <div class="info-value">${deathDate}</div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Status
+      infoHTML += `
+        <div class="info-item">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m8 12 2 2 4-4"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="info-label">Trạng thái</div>
+            <div class="info-value">${person.is_deceased ? 'Đã mất' : 'Còn sống'}</div>
+          </div>
+        </div>
+      `;
+
+      // ID
+      infoHTML += `
+        <div class="info-item">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 9V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"></path>
+              <path d="M8 8v1"></path>
+              <path d="M12 8v1"></path>
+              <path d="M16 8v1"></path>
+              <rect width="20" height="12" x="2" y="9" rx="2"></rect>
+            </svg>
+          </div>
+          <div>
+            <div class="info-label">Mã định danh</div>
+            <div class="info-value" style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">${personId}</div>
+          </div>
+        </div>
+      `;
+
+      infoGrid.innerHTML = infoHTML;
+
+      // Family Section
+      const familyContent = document.getElementById('family-content');
+      let familyHTML = '';
+
+      // Parents
+      const hasParents = (person.father_id && familyData.persons[person.father_id]) ||
+                         (person.mother_id && familyData.persons[person.mother_id]);
+
+      if (hasParents) {
+        familyHTML += '<div class="parents-row">';
+
+        if (person.father_id && familyData.persons[person.father_id]) {
+          const father = familyData.persons[person.father_id];
+          const fatherPhoto = photosMap && photosMap[person.father_id];
+          familyHTML += `
+            <div class="parent-card" onclick="selectPerson('${person.father_id}')">
+              <div class="parent-card-avatar male">
+                ${fatherPhoto
+                  ? `<img src="${fatherPhoto}" alt="${father.surname} ${father.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`
+                  : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>`
+                }
+              </div>
+              <div class="parent-card-info">
+                <div class="parent-card-relation">Cha</div>
+                <div class="parent-card-name">${father.surname} ${father.name}</div>
+              </div>
+            </div>
+          `;
+        } else {
+          familyHTML += '<div></div>';
+        }
+
+        if (person.mother_id && familyData.persons[person.mother_id]) {
+          const mother = familyData.persons[person.mother_id];
+          const motherPhoto = photosMap && photosMap[person.mother_id];
+          familyHTML += `
+            <div class="parent-card" onclick="selectPerson('${person.mother_id}')">
+              <div class="parent-card-avatar female">
+                ${motherPhoto
+                  ? `<img src="${motherPhoto}" alt="${mother.surname} ${mother.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`
+                  : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>`
+                }
+              </div>
+              <div class="parent-card-info">
+                <div class="parent-card-relation">Mẹ</div>
+                <div class="parent-card-name">${mother.surname} ${mother.name}</div>
+              </div>
+            </div>
+          `;
+        }
+
+        familyHTML += '</div>';
+      }
+
+      // Spouses
+      (person.spouse_ids || []).forEach(spouseId => {
+        if (familyData.persons[spouseId]) {
+          const spouse = familyData.persons[spouseId];
+          const spousePhoto = photosMap && photosMap[spouseId];
+          familyHTML += `
+            <div class="spouse-card" onclick="selectPerson('${spouseId}')">
+              <div class="parent-card-avatar ${spouse.gender || ''}">
+                ${spousePhoto
+                  ? `<img src="${spousePhoto}" alt="${spouse.surname} ${spouse.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`
+                  : `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                    </svg>`
+                }
+              </div>
+              <div class="parent-card-info">
+                <div class="parent-card-relation">Vợ/Chồng</div>
+                <div class="parent-card-name">${spouse.surname} ${spouse.name}</div>
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      // Children
+      const children = (person.children_ids || [])
+        .map(id => familyData.persons[id])
+        .filter(Boolean);
+
+      if (children.length > 0) {
+        familyHTML += `
+          <div style="margin-top: 16px;">
+            <div style="font-size: 0.8rem; color: #9a8467; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">
+              Con (${children.length})
+            </div>
+            <div class="family-grid">
+              ${children.map(child => {
+                const childPhoto = photosMap && photosMap[child.id];
+                return `
+                <div class="family-card" onclick="selectPerson('${child.id}')">
+                  <div class="family-card-avatar ${child.gender || ''}">
+                    ${childPhoto
+                      ? `<img src="${childPhoto}" alt="${child.surname} ${child.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">`
+                      : `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                        </svg>`
+                    }
+                  </div>
+                  <div class="family-card-name">${child.surname} ${child.name}</div>
+                  <div class="family-card-gen">${child.generation ? `Đời ${child.generation}` : ''}</div>
+                </div>
+              `}).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      if (!hasParents && (person.spouse_ids || []).length === 0 && children.length === 0) {
+        familyHTML = '<div class="empty-state">Chưa có thông tin gia đình</div>';
+      }
+
+      familyContent.innerHTML = familyHTML;
+
+      // Notes
+      const notesSection = document.getElementById('notes-section');
+      const notesContent = document.getElementById('notes-content');
+      if (person.notes) {
+        notesSection.style.display = 'block';
+        notesContent.textContent = person.notes;
+      } else {
+        notesSection.style.display = 'none';
+      }
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showWelcome() {
+      currentPersonId = null;
+      document.getElementById('profile-card').style.display = 'none';
+      document.getElementById('welcome-state').style.display = 'block';
+    }
+
+    // ==========================================
+    // TREE MODAL
+    // ==========================================
+    function openTreeModal() {
+      const modal = document.getElementById('tree-modal');
+      modal.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+
+      if (!treeInitialized) {
+        initTree();
+        treeInitialized = true;
+      }
+
+      // Center on current person if selected
+      if (currentPersonId) {
+        setTimeout(() => focusNodeInTree(currentPersonId), 300);
+      }
+    }
+
+    function closeTreeModal() {
+      const modal = document.getElementById('tree-modal');
+      modal.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    // ==========================================
+    // D3 TREE (SIMPLIFIED)
+    // ==========================================
+    function initTree() {
+      const container = document.querySelector('.tree-modal-body');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      svg = d3.select('#tree-svg')
+        .attr('width', width)
+        .attr('height', height);
+
+      zoom = d3.zoom()
+        .scaleExtent([0.1, 3])
+        .on('zoom', (event) => {
+          g.attr('transform', event.transform);
+        });
+
+      svg.call(zoom);
+
+      g = svg.append('g')
+        .attr('transform', `translate(${width / 2}, 80)`);
+
+      // Build tree from founder
+      treeData = buildTreeNode('START', 0);
+      root = d3.hierarchy(treeData);
+
+      updateTree(root);
+
+      // Setup controls
+      document.getElementById('zoom-in').addEventListener('click', () => {
+        svg.transition().call(zoom.scaleBy, 1.3);
+      });
+      document.getElementById('zoom-out').addEventListener('click', () => {
+        svg.transition().call(zoom.scaleBy, 0.7);
+      });
+      document.getElementById('reset-view').addEventListener('click', () => {
+        const width = document.querySelector('.tree-modal-body').clientWidth;
+        const transform = d3.zoomIdentity.translate(width / 2, 80).scale(0.8);
+        svg.transition().call(zoom.transform, transform);
+      });
+    }
+
+    function buildTreeNode(personId, depth) {
+      if (!familyData.persons[personId]) return null;
+      if (depth > 4) return null;
+
+      const person = familyData.persons[personId];
+      const children = (person.children_ids || [])
+        .map(childId => buildTreeNode(childId, depth + 1))
+        .filter(Boolean);
+
+      return {
+        id: personId,
+        name: `${person.surname} ${person.name}`.trim(),
+        generation: person.generation,
+        gender: person.gender,
+        _children: children.length > 0 ? children : null,
+        children: depth < 2 ? children : null
+      };
+    }
+
+    function updateTree(source) {
+      const treeLayout = d3.tree()
+        .nodeSize([180, 100])
+        .separation((a, b) => a.parent === b.parent ? 1 : 1.2);
+
+      treeLayout(root);
+
+      const nodes = root.descendants();
+      const links = root.links();
+
+      // Links
+      const link = g.selectAll('.link').data(links, d => d.target.data.id);
+
+      link.enter()
+        .append('path')
+        .attr('class', 'link')
+        .merge(link)
+        .transition().duration(500)
+        .attr('d', d => `M${d.source.x},${d.source.y + 30}
+          C${d.source.x},${(d.source.y + d.target.y) / 2}
+           ${d.target.x},${(d.source.y + d.target.y) / 2}
+           ${d.target.x},${d.target.y - 30}`);
+
+      link.exit().remove();
+
+      // Nodes
+      const node = g.selectAll('.node').data(nodes, d => d.data.id);
+
+      const nodeEnter = node.enter()
+        .append('g')
+        .attr('class', 'node')
+        .attr('transform', d => `translate(${source.x || 0}, ${source.y || 0})`)
+        .on('click', (event, d) => {
+          selectPerson(d.data.id);
+          closeTreeModal();
+        })
+        .on('dblclick', (event, d) => {
+          event.stopPropagation();
+          toggleTreeNode(d);
+        });
+
+      nodeEnter.append('rect')
+        .attr('class', 'node-card')
+        .attr('x', -70).attr('y', -30)
+        .attr('width', 140).attr('height', 60);
+
+      nodeEnter.append('rect')
+        .attr('class', d => `node-gen-bar gen-${Math.max(1, Math.min(14, d.data.generation || 1))}`)
+        .attr('x', -70).attr('y', -30)
+        .attr('width', 140).attr('height', 4);
+
+      nodeEnter.append('text')
+        .attr('class', 'node-name')
+        .attr('y', -5)
+        .attr('text-anchor', 'middle')
+        .text(d => d.data.name.length > 16 ? d.data.name.substring(0, 14) + '...' : d.data.name);
+
+      nodeEnter.append('text')
+        .attr('class', 'node-info')
+        .attr('y', 12)
+        .attr('text-anchor', 'middle')
+        .text(d => d.data.generation ? `Đời ${d.data.generation}` : '');
+
+      node.merge(nodeEnter)
+        .transition().duration(500)
+        .attr('transform', d => `translate(${d.x}, ${d.y})`);
+
+      node.exit().remove();
+
+      nodes.forEach(d => { d.x0 = d.x; d.y0 = d.y; });
+    }
+
+    function toggleTreeNode(d) {
+      if (d.children) {
+        d.data._children = d.data.children;
+        d.data.children = null;
+        d.children = null;
+      } else if (d.data._children) {
+        d.data.children = d.data._children;
+        d.children = d.data.children.map(child => {
+          const node = d3.hierarchy(child);
+          node.parent = d;
+          node.depth = d.depth + 1;
+          return node;
+        });
+      }
+      root = d3.hierarchy(treeData);
+      updateTree(d);
+    }
+
+    function focusNodeInTree(personId) {
+      console.log('focusNodeInTree:', personId);
+
+      if (!root) {
+        console.log('Tree not initialized');
+        return;
+      }
+
+      // First check if node is already visible
+      let nodes = root.descendants();
+      let targetNode = nodes.find(n => n.data.id === personId);
+
+      if (targetNode) {
+        console.log('Node found in tree, centering...');
+        centerTreeOnNode(targetNode);
+        highlightNode(personId);
+        return;
+      }
+
+      console.log('Node not visible, building path...');
+
+      // Node not visible - need to expand path to it
+      const person = familyData.persons[personId];
+      if (!person) {
+        console.log('Person not found in data');
+        return;
+      }
+
+      // Build path from root to target by tracing parent IDs
+      const path = [];
+      let currentId = personId;
+
+      while (currentId) {
+        path.unshift(currentId);
+        const current = familyData.persons[currentId];
+        if (!current) break;
+        currentId = current.father_id || current.mother_id;
+        if (path.length > 20) break;
+      }
+
+      // Ensure path starts with START
+      if (path[0] !== 'START') {
+        // Try to find connection to START through the tree
+        path.unshift('START');
+      }
+
+      console.log('Path to expand:', path);
+
+      // Rebuild tree with expanded path
+      treeData = buildTreeNodeWithPath('START', 0, path);
+      root = d3.hierarchy(treeData);
+      updateTree(root);
+
+      // After update, find and center on the node
+      setTimeout(() => {
+        nodes = root.descendants();
+        targetNode = nodes.find(n => n.data.id === personId);
+        console.log('After expand, found node:', !!targetNode);
+        if (targetNode) {
+          centerTreeOnNode(targetNode);
+          highlightNode(personId);
+        }
+      }, 600);
+    }
+
+    function buildTreeNodeWithPath(personId, depth, expandPath) {
+      if (!familyData.persons[personId]) return null;
+
+      const person = familyData.persons[personId];
+      const isOnPath = expandPath.includes(personId);
+      const maxDepth = isOnPath ? 20 : 2; // Expand deeper if on path
+
+      if (depth > maxDepth) return null;
+
+      let children = null;
+      if (person.children_ids && person.children_ids.length > 0) {
+        const childNodes = person.children_ids
+          .map(childId => buildTreeNodeWithPath(childId, depth + 1, expandPath))
+          .filter(Boolean);
+
+        if (childNodes.length > 0) {
+          // If we're on the path and within 2 levels, show children expanded
+          // Otherwise collapse them
+          if (depth < 2 || isOnPath) {
+            children = childNodes;
+          }
+        }
+      }
+
+      return {
+        id: personId,
+        name: `${person.surname} ${person.name}`.trim(),
+        generation: person.generation,
+        gender: person.gender,
+        children: children,
+        _children: children ? null : null
+      };
+    }
+
+    function highlightNode(personId) {
+      g.selectAll('.node').classed('selected', false);
+      g.selectAll('.node')
+        .filter(n => n.data.id === personId)
+        .classed('selected', true);
+    }
+
+    function centerTreeOnNode(node) {
+      const container = document.querySelector('.tree-modal-body');
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      const transform = d3.zoomIdentity
+        .translate(width / 2 - node.x, height / 2 - node.y)
+        .scale(1);
+
+      svg.transition().duration(750).call(zoom.transform, transform);
+    }
+
+    // ==========================================
+    // INIT
+    // ==========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      loadData().then(() => {
+        setupSearch();
+      });
+    });
+
+    // Close modal on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeTreeModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
