@@ -106,8 +106,12 @@ class FamilyTreeConverter:
                 "surname_at_birth": "",
                 "gender": None,
                 "birth_date": None,
+                "birth_place": None,
                 "death_date": None,
+                "death_place": None,
                 "is_deceased": False,
+                "burial_place": None,
+                "burial_date": None,
                 "generation": None,
                 "generation_source": None,
                 "phai": None,
@@ -120,6 +124,9 @@ class FamilyTreeConverter:
                 "email": None,
                 "phone": None,
                 "photo": None,
+                "profession": None,
+                "employer": None,
+                "interests": None,
                 "notes": "",
                 "activities": "",
             }
@@ -185,6 +192,24 @@ class FamilyTreeConverter:
                     if gen and not person["generation"]:
                         person["generation"] = gen
                         person["generation_source"] = "explicit"
+                elif prefix == 'v':
+                    # Birth place
+                    person["birth_place"] = value
+                elif prefix == 'U':
+                    # Burial place
+                    person["burial_place"] = value
+                elif prefix == 'F':
+                    # Burial date (format: YYYYMMDD or 0000MMDD)
+                    person["burial_date"] = self.parse_date(value)
+                elif prefix == 'I':
+                    # Interests
+                    person["interests"] = value
+                elif prefix == 'j':
+                    # Profession/Occupation
+                    person["profession"] = value
+                elif prefix == 'E':
+                    # Employer/Position
+                    person["employer"] = value
 
             person["notes"] = " | ".join(notes_parts)
             self.persons[person_id] = person
@@ -302,6 +327,12 @@ class FamilyTreeConverter:
             "deceased_count": sum(1 for p in self.persons.values() if p["is_deceased"]),
             "alive_count": sum(1 for p in self.persons.values() if not p["is_deceased"]),
             "with_birth_date": sum(1 for p in self.persons.values() if p["birth_date"]),
+            "with_birth_place": sum(1 for p in self.persons.values() if p["birth_place"]),
+            "with_burial_place": sum(1 for p in self.persons.values() if p["burial_place"]),
+            "with_profession": sum(1 for p in self.persons.values() if p["profession"]),
+            "with_address": sum(1 for p in self.persons.values() if p["address"]),
+            "with_email": sum(1 for p in self.persons.values() if p["email"]),
+            "with_phone": sum(1 for p in self.persons.values() if p["phone"]),
             "generations": {},
             "phai_distribution": defaultdict(int),
             "chi_distribution": defaultdict(int),
@@ -466,11 +497,14 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(description='Chuyển đổi FamilyScript sang JSON')
+    # Get script directory for relative paths
+    script_dir = Path(__file__).parent.resolve()
+
     parser.add_argument('input', nargs='?',
-                        default='/Users/toandang/Downloads/FamilyEcho/My-Family-20-Jan-2026-020424519.txt',
+                        default=str(script_dir / 'My-Family-20-Jan-2026-020424519.txt'),
                         help='File FamilyScript đầu vào')
-    parser.add_argument('-o', '--output', default=None,
-                        help='Thư mục xuất (mặc định: cùng thư mục với input)')
+    parser.add_argument('-o', '--output', default=str(script_dir / 'docs'),
+                        help='Thư mục xuất (mặc định: docs folder)')
 
     args = parser.parse_args()
 
