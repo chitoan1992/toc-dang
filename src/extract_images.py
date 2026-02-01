@@ -105,7 +105,7 @@ def update_family_data(json_file, person_photos, images):
         if image_id in images:
             photos_map[person_id] = images[image_id]
 
-    photos_file = 'photos_map.json'
+    photos_file = 'docs/photos_map.json'
     print(f"Saving photos map to {photos_file}...")
     with open(photos_file, 'w', encoding='utf-8') as f:
         json.dump(photos_map, f, ensure_ascii=False)
@@ -115,8 +115,8 @@ def update_family_data(json_file, person_photos, images):
     return output_file, photos_file
 
 def main():
-    html_file = 'My-Family-20-Jan-2026-015911148.html'
-    json_file = 'family_data.json'
+    html_file = 'docs/family-tree.html'
+    json_file = 'docs/family_data.json'
 
     if not os.path.exists(html_file):
         print(f"Error: {html_file} not found")

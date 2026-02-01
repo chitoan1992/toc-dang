@@ -953,7 +953,7 @@
                                               "generation": 12,
                                               "gender": "male",
                                               "is_deceased": false,
-                                              "phai": null,
+                                              "phai": "Nhất",
                                               "children": [
                                                 {
                                                   "id": "RIX75",
@@ -979,7 +979,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 }
                                               ]
@@ -990,7 +990,7 @@
                                               "generation": 12,
                                               "gender": "male",
                                               "is_deceased": true,
-                                              "phai": null,
+                                              "phai": "Nhất",
                                               "children": []
                                             }
                                           ]
@@ -998,15 +998,15 @@
                                         {
                                           "id": "EDTC6",
                                           "name": "Đặng Văn Ngộ (đời Thứ 11)",
-                                          "generation": 11,
+                                          "generation": 12,
                                           "gender": "male",
                                           "is_deceased": true,
-                                          "phai": null,
+                                          "phai": "Nhất",
                                           "children": [
                                             {
                                               "id": "WZ2F9",
                                               "name": "Đặng Thị Anh Đức",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "female",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1015,7 +1015,7 @@
                                             {
                                               "id": "CGX8I",
                                               "name": "Đặng Thị Nguyên",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "female",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1024,7 +1024,7 @@
                                             {
                                               "id": "B0RE5",
                                               "name": "Đặng Thị Ngọc",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "female",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1033,7 +1033,7 @@
                                             {
                                               "id": "Q6BRV",
                                               "name": "Đặng Thị Vân",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "female",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1042,7 +1042,7 @@
                                             {
                                               "id": "JN5RV",
                                               "name": "Đặng Thị Yến",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "female",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1051,7 +1051,7 @@
                                             {
                                               "id": "ND5L0",
                                               "name": "Đặng Vô Danh",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "male",
                                               "is_deceased": true,
                                               "phai": null,
@@ -1060,7 +1060,7 @@
                                             {
                                               "id": "G0IUQ",
                                               "name": "Đặng Văn Chánh",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "male",
                                               "is_deceased": true,
                                               "phai": null,
@@ -1069,7 +1069,7 @@
                                             {
                                               "id": "M80E9",
                                               "name": "Đặng Văn Huy",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "male",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1077,7 +1077,7 @@
                                                 {
                                                   "id": "DWINN",
                                                   "name": "Đặng Thị Duyên",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "female",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1086,7 +1086,7 @@
                                                 {
                                                   "id": "POD9Q",
                                                   "name": "Đặng Văn Khải",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "male",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1097,7 +1097,7 @@
                                             {
                                               "id": "EXQHR",
                                               "name": "Đặng Văn Hải",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "male",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1105,7 +1105,7 @@
                                                 {
                                                   "id": "QX3SE",
                                                   "name": "Đặng Văn Bảo",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "male",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1114,7 +1114,7 @@
                                                 {
                                                   "id": "MQ3BH",
                                                   "name": "Đặng Văn Hữu",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "male",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1125,7 +1125,7 @@
                                             {
                                               "id": "ZF53T",
                                               "name": "Đặng Văn Mỹ",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "male",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1133,7 +1133,7 @@
                                                 {
                                                   "id": "OEUAZ",
                                                   "name": "Đặng Thị Linh",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "female",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1142,7 +1142,7 @@
                                                 {
                                                   "id": "IBP2J",
                                                   "name": "Đặng Thị Vy",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "female",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1151,7 +1151,7 @@
                                                 {
                                                   "id": "M5IJP",
                                                   "name": "Đặng Văn Khoa",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "male",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1162,7 +1162,7 @@
                                             {
                                               "id": "U35H5",
                                               "name": "Đặng Văn Nhựt",
-                                              "generation": 12,
+                                              "generation": 13,
                                               "gender": "male",
                                               "is_deceased": false,
                                               "phai": null,
@@ -1170,7 +1170,7 @@
                                                 {
                                                   "id": "DLA33",
                                                   "name": "Đặng Thị Hương",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "female",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1179,7 +1179,7 @@
                                                 {
                                                   "id": "OH6BD",
                                                   "name": "Đặng Văn Tuyên",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "male",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1188,7 +1188,7 @@
                                                 {
                                                   "id": "PHZRA",
                                                   "name": "Đặng Văn Tín",
-                                                  "generation": 13,
+                                                  "generation": 14,
                                                   "gender": "male",
                                                   "is_deceased": false,
                                                   "phai": null,
@@ -1306,7 +1306,7 @@
                                           "generation": 11,
                                           "gender": "male",
                                           "is_deceased": true,
-                                          "phai": null,
+                                          "phai": "Nhất",
                                           "children": [
                                             {
                                               "id": "DFQUU",
@@ -1350,7 +1350,7 @@
                                               "generation": 12,
                                               "gender": "male",
                                               "is_deceased": true,
-                                              "phai": null,
+                                              "phai": "Nhất",
                                               "children": []
                                             },
                                             {
@@ -1359,7 +1359,7 @@
                                               "generation": 12,
                                               "gender": "male",
                                               "is_deceased": false,
-                                              "phai": null,
+                                              "phai": "Nhất",
                                               "children": [
                                                 {
                                                   "id": "NIT1P",
@@ -1367,7 +1367,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 },
                                                 {
@@ -1376,7 +1376,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 }
                                               ]
@@ -1387,7 +1387,7 @@
                                               "generation": 12,
                                               "gender": "male",
                                               "is_deceased": false,
-                                              "phai": null,
+                                              "phai": "Nhất",
                                               "children": [
                                                 {
                                                   "id": "J19Q3",
@@ -1413,7 +1413,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 },
                                                 {
@@ -1422,7 +1422,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 },
                                                 {
@@ -1440,7 +1440,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 },
                                                 {
@@ -1449,7 +1449,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 },
                                                 {
@@ -1458,7 +1458,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 },
                                                 {
@@ -1467,7 +1467,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 }
                                               ]
@@ -1764,7 +1764,7 @@
                                               "generation": 12,
                                               "gender": "male",
                                               "is_deceased": false,
-                                              "phai": null,
+                                              "phai": "Nhất",
                                               "children": [
                                                 {
                                                   "id": "L99Q5",
@@ -1772,7 +1772,7 @@
                                                   "generation": 13,
                                                   "gender": "male",
                                                   "is_deceased": false,
-                                                  "phai": null,
+                                                  "phai": "Nhất",
                                                   "children": []
                                                 },
                                                 {
@@ -2920,7 +2920,7 @@
                                   "children": []
                                 },
                                 {
-                                  "id": "EAUHI",
+                                  "id": "RYI6I",
                                   "name": "Đặng Vô Danh",
                                   "generation": 9,
                                   "gender": null,
@@ -2929,7 +2929,7 @@
                                   "children": []
                                 },
                                 {
-                                  "id": "RYI6I",
+                                  "id": "EAUHI",
                                   "name": "Đặng Vô Danh",
                                   "generation": 9,
                                   "gender": null,
@@ -3737,12 +3737,22 @@
                                 },
                                 {
                                   "id": "O1V51",
-                                  "name": "Đặng Văn Yến",
+                                  "name": "Đặng Văn Yên",
                                   "generation": 9,
                                   "gender": "male",
                                   "is_deceased": true,
                                   "phai": null,
-                                  "children": []
+                                  "children": [
+                                    {
+                                      "id": "EHQKI",
+                                      "name": "Đặng Văn Qoành",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -3962,6 +3972,15 @@
                       "phai": "Nhì",
                       "children": [
                         {
+                          "id": "AK6RU",
+                          "name": "Đặng Thị Đạt",
+                          "generation": 7,
+                          "gender": "female",
+                          "is_deceased": true,
+                          "phai": null,
+                          "children": []
+                        },
+                        {
                           "id": "IHCHC",
                           "name": "Đặng Văn Kế",
                           "generation": 7,
@@ -4153,6 +4172,15 @@
                               ]
                             }
                           ]
+                        },
+                        {
+                          "id": "U0HUP",
+                          "name": "Đặng Văn Phụ",
+                          "generation": 7,
+                          "gender": "male",
+                          "is_deceased": true,
+                          "phai": "2",
+                          "children": []
                         },
                         {
                           "id": "Y7CB8",
@@ -4899,7 +4927,7 @@
                               "children": []
                             },
                             {
-                              "id": "NE3Q1",
+                              "id": "S6YK2",
                               "name": "Đặng Vô Danh",
                               "generation": 8,
                               "gender": null,
@@ -4908,7 +4936,7 @@
                               "children": []
                             },
                             {
-                              "id": "S6YK2",
+                              "id": "NE3Q1",
                               "name": "Đặng Vô Danh",
                               "generation": 8,
                               "gender": null,
@@ -9733,7 +9761,7 @@
                                       "children": []
                                     },
                                     {
-                                      "id": "OG7CI",
+                                      "id": "IKAST",
                                       "name": "Đặng Vô Danh",
                                       "generation": 10,
                                       "gender": "male",
@@ -9742,7 +9770,7 @@
                                       "children": []
                                     },
                                     {
-                                      "id": "IKAST",
+                                      "id": "OG7CI",
                                       "name": "Đặng Vô Danh",
                                       "generation": 10,
                                       "gender": "male",
@@ -9919,7 +9947,7 @@
                               "children": []
                             },
                             {
-                              "id": "BCZF4",
+                              "id": "FL5MH",
                               "name": "Đặng Vô Danh",
                               "generation": 8,
                               "gender": null,
@@ -9928,7 +9956,7 @@
                               "children": []
                             },
                             {
-                              "id": "FL5MH",
+                              "id": "BCZF4",
                               "name": "Đặng Vô Danh",
                               "generation": 8,
                               "gender": null,
@@ -22537,7 +22565,7 @@
                                       "children": []
                                     },
                                     {
-                                      "id": "Y6G7I",
+                                      "id": "IKVTR",
                                       "name": "Đặng Vô Danh",
                                       "generation": 10,
                                       "gender": null,
@@ -22546,7 +22574,7 @@
                                       "children": []
                                     },
                                     {
-                                      "id": "IKVTR",
+                                      "id": "Y6G7I",
                                       "name": "Đặng Vô Danh",
                                       "generation": 10,
                                       "gender": null,
@@ -22599,7 +22627,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "P2F3R",
+                                          "id": "DE2HQ",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -22608,7 +22636,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "DE2HQ",
+                                          "id": "P2F3R",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -22751,7 +22779,7 @@
                                           "generation": 11,
                                           "gender": "male",
                                           "is_deceased": false,
-                                          "phai": null,
+                                          "phai": "Nhì",
                                           "children": [
                                             {
                                               "id": "RVE53",
@@ -22822,7 +22850,7 @@
                                               "generation": 12,
                                               "gender": "male",
                                               "is_deceased": false,
-                                              "phai": null,
+                                              "phai": "Nhì",
                                               "children": []
                                             },
                                             {
@@ -23284,7 +23312,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "UPHHE",
+                                          "id": "BZNIL",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -23293,7 +23321,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "BZNIL",
+                                          "id": "UPHHE",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -23439,7 +23467,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "EI2TS",
+                                          "id": "X7INR",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -23448,7 +23476,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "X7INR",
+                                          "id": "EI2TS",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -23474,7 +23502,7 @@
                                               "children": []
                                             },
                                             {
-                                              "id": "V9APK",
+                                              "id": "AQE9P",
                                               "name": "Đặng Văn",
                                               "generation": 12,
                                               "gender": "male",
@@ -23483,7 +23511,7 @@
                                               "children": []
                                             },
                                             {
-                                              "id": "AQE9P",
+                                              "id": "V9APK",
                                               "name": "Đặng Văn",
                                               "generation": 12,
                                               "gender": "male",
