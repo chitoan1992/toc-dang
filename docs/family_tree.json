@@ -2920,7 +2920,7 @@
                                   "children": []
                                 },
                                 {
-                                  "id": "RYI6I",
+                                  "id": "EAUHI",
                                   "name": "Đặng Vô Danh",
                                   "generation": 9,
                                   "gender": null,
@@ -2929,7 +2929,7 @@
                                   "children": []
                                 },
                                 {
-                                  "id": "EAUHI",
+                                  "id": "RYI6I",
                                   "name": "Đặng Vô Danh",
                                   "generation": 9,
                                   "gender": null,
@@ -3155,7 +3155,162 @@
                                   "gender": "male",
                                   "is_deceased": true,
                                   "phai": "Nhì",
-                                  "children": []
+                                  "children": [
+                                    {
+                                      "id": "FLTGI",
+                                      "name": "Đặng Thị Ký",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "DCXHG",
+                                      "name": "Đặng Vô Danh",
+                                      "generation": 10,
+                                      "gender": null,
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "ASDTN",
+                                      "name": "Đặng Vô Danh",
+                                      "generation": 10,
+                                      "gender": null,
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "EZUNJ",
+                                      "name": "Đặng Văn Chấn",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "XAK19",
+                                          "name": "Đặng Thị Cần",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "TVGCI",
+                                          "name": "Đặng Thị Liền",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "SGL2Y",
+                                          "name": "Đặng Thị Như",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "W4KTK",
+                                          "name": "Đặng Thị Thùy",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "T3NHU",
+                                          "name": "Đặng Văn Cảnh",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "TTO7Q",
+                                          "name": "Đặng Văn Lỳ",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "PP7MP",
+                                          "name": "Đặng Văn Nhị",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "DJDA9",
+                                          "name": "Đặng Văn Tra",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "OA7DN",
+                                          "name": "Đặng Văn Tồn",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "PW897",
+                                      "name": "Đặng Văn Cách",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "EOQG6",
+                                      "name": "Đặng Văn Cử",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "QKI78",
+                                      "name": "Đặng Văn Hường",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "I908F",
+                                      "name": "Đặng Văn Hạnh",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    }
+                                  ]
                                 },
                                 {
                                   "id": "F0J91",
@@ -3164,7 +3319,235 @@
                                   "gender": "male",
                                   "is_deceased": true,
                                   "phai": "Nhì",
-                                  "children": []
+                                  "children": [
+                                    {
+                                      "id": "SXQ3H",
+                                      "name": "Đặng Thị Duyên",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "IHZCO",
+                                      "name": "Đặng Thị Em",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "F115M",
+                                      "name": "Đặng Thị Lai",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": false,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "J41T9",
+                                      "name": "Đặng Thị Mùi",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "B800O",
+                                      "name": "Đặng Văn Biên",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "HQA1X",
+                                      "name": "Đặng Văn Chức",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "D5LLN",
+                                          "name": "Đặng Thị Chót",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "H67X6",
+                                          "name": "Đặng Thị Dần",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "RLE4L",
+                                          "name": "Đặng Thị Giới",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "NL9X0",
+                                          "name": "Đặng Thị Thận",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "EJO17",
+                                          "name": "Đặng Thị Thọ",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "DC4AE",
+                                          "name": "Đặng Văn BồnA",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "D2ZEA",
+                                          "name": "Đặng Văn BồnB",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "ZE66I",
+                                          "name": "Đặng Văn Bụi",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "YVK9Q",
+                                          "name": "Đặng Văn Hay",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "EA0I4",
+                                          "name": "Đặng Văn Kiệt",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "X480A",
+                                          "name": "Đặng Văn Xượt",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "SO6LB",
+                                      "name": "Đặng Văn Nữa",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "BDSED",
+                                      "name": "Đặng Văn Sau",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": false,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "QDYRL",
+                                      "name": "Đặng Văn Thôi",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "OZNSL",
+                                      "name": "Đặng Văn Ất",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "WI0QD",
+                                          "name": "Đặng Thị Bính",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "DRPM5",
+                                          "name": "Đặng Thị Đính",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "XQ2FU",
+                                          "name": "Đặng Thị Đỉnh",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "I9BEB",
+                                          "name": "Đặng Văn Giáp",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
                                 },
                                 {
                                   "id": "AOPTA",
@@ -3182,7 +3565,189 @@
                                   "gender": "male",
                                   "is_deceased": true,
                                   "phai": "Nhì",
-                                  "children": []
+                                  "children": [
+                                    {
+                                      "id": "ZDQKQ",
+                                      "name": "Đặng Thị Dĩ",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "W1JNZ",
+                                      "name": "Đặng Thị Khoai",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "W8IFS",
+                                      "name": "Đặng Thị Lượm",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "V5JYZ",
+                                      "name": "Đặng Thị Ong",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "S8CQW",
+                                      "name": "Đặng Thị Thăng",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "H1DEB",
+                                      "name": "Đặng Thị Thương",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "JL4QG",
+                                      "name": "Đặng Thị Tịnh",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "V8N0Y",
+                                      "name": "Đặng Thị Xu",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "GKJH0",
+                                      "name": "Đặng Văn Bảy",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "X61WQ",
+                                      "name": "Đặng Văn Cơi",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "QZRYH",
+                                      "name": "Đặng Văn Khuê",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "B9QTP",
+                                      "name": "Đặng Văn Mau",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "JGPYE",
+                                      "name": "Đặng Văn Nhỏ",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "WE7YL",
+                                      "name": "Đặng Văn Năm",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "J9C4F",
+                                      "name": "Đặng Văn Ấm",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "K8SOK",
+                                          "name": "Đặng Thị Chua",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "H5KU3",
+                                          "name": "Đặng Văn Hùng",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "Z5OXF",
+                                          "name": "Đặng Văn Khế",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "X28Z0",
+                                          "name": "Đặng Văn Lầu",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "P6XE4",
+                                          "name": "Đặng Văn Trước",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
                                 },
                                 {
                                   "id": "XRJFQ",
@@ -3200,11 +3765,184 @@
                                   "gender": "male",
                                   "is_deceased": true,
                                   "phai": "Nhì",
-                                  "children": []
+                                  "children": [
+                                    {
+                                      "id": "FE8AM",
+                                      "name": "Đặng Thị Cân",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "EM5WX",
+                                      "name": "Đặng Thị Danh",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "XNVEQ",
+                                      "name": "Đặng Thị Huyền",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "RFH1Y",
+                                      "name": "Đặng Thị Ký",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "EZ21V",
+                                      "name": "Đặng Thị Nhờ",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "MQ00Z",
+                                      "name": "Đặng Thị Soạn",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "UZZXF",
+                                      "name": "Đặng Thị Đoan",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "B0OQC",
+                                      "name": "Đặng Văn Can",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "R347L",
+                                      "name": "Đặng Văn Mót",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": false,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "FK6OR",
+                                          "name": "Đặng Thị Chiếu",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "EHKFP",
+                                          "name": "Đặng Thị Lời",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "K1T33",
+                                          "name": "Đặng Văn",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "W9Y1L",
+                                          "name": "Đặng Văn KHế",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "A6K09",
+                                          "name": "Đặng Văn Khanh",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "RAOE4",
+                                          "name": "Đặng Văn Thành",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "WOUMF",
+                                          "name": "Đặng Văn Túc",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "O7UBO",
+                                          "name": "Đặng Văn Đô",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "VMT7J",
+                                      "name": "Đặng Văn Thêm",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "I9GGS",
+                                      "name": "Đặng Văn Đỉnh",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    }
+                                  ]
                                 },
                                 {
                                   "id": "DGT0E",
-                                  "name": "Đặng Văn Ơ",
+                                  "name": "Đặng Văn Ở",
                                   "generation": 9,
                                   "gender": "male",
                                   "is_deceased": true,
@@ -3215,7 +3953,7 @@
                             },
                             {
                               "id": "FO0J6",
-                              "name": "Đặng Văn Sử",
+                              "name": "Đặng Văn Sử (Chi4)",
                               "generation": 8,
                               "gender": "male",
                               "is_deceased": true,
@@ -3290,7 +4028,7 @@
                                   "generation": 9,
                                   "gender": "male",
                                   "is_deceased": true,
-                                  "phai": null,
+                                  "phai": "Nhì",
                                   "children": []
                                 }
                               ]
@@ -3354,8 +4092,163 @@
                                   "generation": 9,
                                   "gender": "male",
                                   "is_deceased": true,
-                                  "phai": null,
-                                  "children": []
+                                  "phai": "Nhì",
+                                  "children": [
+                                    {
+                                      "id": "VOC6J",
+                                      "name": "Đặng Thị Thạch",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "BQR0Y",
+                                      "name": "Đặng Thị Tở",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "GY21R",
+                                      "name": "Đặng Vô Danh",
+                                      "generation": 10,
+                                      "gender": null,
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "PUWTA",
+                                      "name": "Đặng Văn Cư",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "MHPDU",
+                                      "name": "Đặng Văn Cột",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "GBJTX",
+                                      "name": "Đặng Văn Kèo",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "CG2EV",
+                                      "name": "Đặng Văn Minh",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "ZT8L3",
+                                      "name": "Đặng Văn Sở",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "PVG23",
+                                      "name": "Đặng Văn Xiêng",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": false,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "MWFEP",
+                                          "name": "Đặng Thị Dần",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "I82A8",
+                                          "name": "Đặng Thị Thương",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "EXP77",
+                                          "name": "Đặng Văn Mai",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "UVRZ7",
+                                          "name": "Đặng Văn Nhung(Em)",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "BZ6DW",
+                                          "name": "Đặng Văn Nhừng",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "IIVXY",
+                                          "name": "Đặng Văn Năng",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "ENCL9",
+                                          "name": "Đặng Văn Quảng",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "Y27E3",
+                                          "name": "Đặng Văn Xuân",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
                                 }
                               ]
                             },
@@ -3388,20 +4281,822 @@
                                 {
                                   "id": "G5RJ9",
                                   "name": "Đặng Văn Nguyên(Mùi)",
-                                  "generation": 9,
+                                  "generation": 98,
                                   "gender": "male",
                                   "is_deceased": true,
-                                  "phai": null,
-                                  "children": []
+                                  "phai": "Nhì",
+                                  "children": [
+                                    {
+                                      "id": "NP6Z6",
+                                      "name": "Đặng Thị Mẹo",
+                                      "generation": 99,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "AAPNJ",
+                                      "name": "Đặng Văn Kiện",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "CV9V2",
+                                          "name": "Đặng Thị Du",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "TNNWL",
+                                          "name": "Đặng Thị Phê",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "E4UTV",
+                                          "name": "Đặng Văn Bích",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "BGB0G",
+                                          "name": "Đặng Văn Bửu",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "C1B2E",
+                                          "name": "Đặng Văn Chương",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "RFJZT",
+                                      "name": "Đặng Văn Mùi",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "URIKR",
+                                          "name": "Đặng Thị Chút",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "PRUIM",
+                                          "name": "Đặng Thị Huệ",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "C0ZDL",
+                                          "name": "Đặng Thị Lan",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "B3S76",
+                                          "name": "Đặng Thị Lương",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "QILHI",
+                                          "name": "Đặng Thị Tam",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "PA7OR",
+                                          "name": "Đặng Thị Thơm",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "VNPFU",
+                                          "name": "Đặng Thị Tại",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "HPKYW",
+                                          "name": "Đặng Thị Tỵ",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "LW8CS",
+                                          "name": "Đặng Văn Lựu",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "XIELT",
+                                          "name": "Đặng Văn Nhị",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "Y2M77",
+                                          "name": "Đặng Văn Thương",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "RDCPF",
+                                      "name": "Đặng Văn Thìn",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": false,
+                                      "phai": "Nhì",
+                                      "children": []
+                                    }
+                                  ]
                                 },
                                 {
                                   "id": "F8OH1",
                                   "name": "Đặng Văn Đó(Lý)",
-                                  "generation": 9,
+                                  "generation": 8,
                                   "gender": "male",
                                   "is_deceased": true,
-                                  "phai": null,
-                                  "children": []
+                                  "phai": "Nhì",
+                                  "children": [
+                                    {
+                                      "id": "VACEE",
+                                      "name": "Đặng Thị Lỳ",
+                                      "generation": 9,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "Y6ENS",
+                                      "name": "Đặng Thị Sỹ",
+                                      "generation": 9,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "EHB3R",
+                                      "name": "Đặng Thị Thuận",
+                                      "generation": 9,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "A5Y53",
+                                      "name": "Đặng Vô Danh",
+                                      "generation": 9,
+                                      "gender": null,
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "B07MM",
+                                      "name": "Đặng Văn Cho",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "WUL2F",
+                                          "name": "Đặng Thị Diệu",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": false,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "FLJ7V",
+                                          "name": "Đặng Thị Huê",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "CGVK2",
+                                          "name": "Đặng Thị Ký",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "ADFSY",
+                                          "name": "Đặng Thị Lan",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "RS2D6",
+                                          "name": "Đặng Thị Lành",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": false,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "PKPNC",
+                                          "name": "Đặng Thị Thành",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "CYHBT",
+                                          "name": "Đặng Văn Phụng",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "ESQI0",
+                                          "name": "Đặng Văn Địch",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "Z1ROP",
+                                          "name": "Đặng Văn Đờn",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "N8CSC",
+                                      "name": "Đặng Văn Cần",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "IF4EO",
+                                          "name": "Đặng Thị Hai",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "UKALH",
+                                          "name": "Đặng Thị Hết",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "JSDZQ",
+                                          "name": "Đặng Thị Lượm",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "X6N1Z",
+                                          "name": "Đặng Thị Lễ",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "AO676",
+                                          "name": "Đặng Thị Nữa",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "G5XQO",
+                                          "name": "Đặng Văn Biên",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "WFK6G",
+                                          "name": "Đặng Văn Sót",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "W54GJ",
+                                      "name": "Đặng Văn Diễn",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "STP5P",
+                                          "name": "Đặng Thị Cận",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "ZLX23",
+                                          "name": "Đặng Thị Hoa",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "LIVY4",
+                                          "name": "Đặng Thị Lai",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "A3TVI",
+                                          "name": "Đặng Thị Lan",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "SPPUV",
+                                          "name": "Đặng Thị Yến",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "YR2VS",
+                                          "name": "Đặng Văn Chim",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "IIF5P",
+                                          "name": "Đặng Văn Hoan",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "SJ5A3",
+                                          "name": "Đặng Văn May",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "UCFHL",
+                                          "name": "Đặng Văn Đoan",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "IDUAB",
+                                          "name": "Đặng Văn Đồn",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "DF1AB",
+                                      "name": "Đặng Văn Dậu",
+                                      "generation": 9,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "E7C4S",
+                                      "name": "Đặng Văn Kiều",
+                                      "generation": 9,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "EESFG",
+                                      "name": "Đặng Văn Kỳ",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "XJT5K",
+                                          "name": "Đặng Thị Ngọt",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "R5KR4",
+                                          "name": "Đặng Thị NgọtB",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "JK8JI",
+                                          "name": "Đặng Thị Sơn",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "PFT3Y",
+                                          "name": "Đặng Thị Trọng",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "PHGI0",
+                                          "name": "Đặng Thị Đường",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "GVQ1H",
+                                          "name": "Đặng Văn Hiền",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "U1X06",
+                                          "name": "Đặng Văn Hùng",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "G4PYS",
+                                          "name": "Đặng Văn Mua",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "HBB9F",
+                                          "name": "Đặng Văn Mật",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "CRRWK",
+                                          "name": "Đặng Văn Thân",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "ONDJ5",
+                                          "name": "Đặng Văn Tương",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "TNDEE",
+                                          "name": "Đặng Văn Đài",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "ET106",
+                                      "name": "Đặng Văn Mẫn",
+                                      "generation": 9,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": [
+                                        {
+                                          "id": "X6PB3",
+                                          "name": "Đặng Thị Dung",
+                                          "generation": 10,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "DFPK8",
+                                          "name": "Đặng Thị Heo",
+                                          "generation": 10,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "BVE2H",
+                                          "name": "Đặng Thị Nghiên",
+                                          "generation": 10,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "HUPMD",
+                                          "name": "Đặng Văn Học",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "NDFLS",
+                                          "name": "Đặng Văn Khoa",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "CHCTM",
+                                          "name": "Đặng Văn Sách",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "N5TTZ",
+                                      "name": "Đặng Văn Tuất",
+                                      "generation": 9,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "TDT35",
+                                      "name": "Đặng Văn Xin",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": false,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "RFS1E",
+                                          "name": "Đặng Thị Nhung",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "COPV3",
+                                          "name": "Đặng Thị Nhượng",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "O9OMK",
+                                          "name": "Đặng Thị Được",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "QCX87",
+                                          "name": "Đặng Văn Dưỡng",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "RDS6R",
+                                          "name": "Đặng Văn Khâm",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "IJX1V",
+                                          "name": "Đặng Văn Nhường",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "PFS15",
+                                          "name": "Đặng Văn Phận",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "KST13",
+                                          "name": "Đặng Văn Phụ",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "QHMDD",
+                                          "name": "Đặng Văn Quế",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "B8YH5",
+                                          "name": "Đặng Văn Sâm",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "XBT2I",
+                                          "name": "Đặng Văn Ổi",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
                                 }
                               ]
                             }
@@ -10434,7 +12129,7 @@
                                               "children": []
                                             },
                                             {
-                                              "id": "JFXBK",
+                                              "id": "UPEI7",
                                               "name": "Đặng Thị Vô Danh",
                                               "generation": 12,
                                               "gender": "female",
@@ -10443,7 +12138,7 @@
                                               "children": []
                                             },
                                             {
-                                              "id": "UPEI7",
+                                              "id": "JFXBK",
                                               "name": "Đặng Thị Vô Danh",
                                               "generation": 12,
                                               "gender": "female",
@@ -13734,7 +15429,7 @@
                                       "children": []
                                     },
                                     {
-                                      "id": "IKAST",
+                                      "id": "B6KI4",
                                       "name": "Đặng Vô Danh",
                                       "generation": 10,
                                       "gender": "male",
@@ -13752,7 +15447,7 @@
                                       "children": []
                                     },
                                     {
-                                      "id": "B6KI4",
+                                      "id": "IKAST",
                                       "name": "Đặng Vô Danh",
                                       "generation": 10,
                                       "gender": "male",
@@ -13920,7 +15615,7 @@
                               "children": []
                             },
                             {
-                              "id": "FL5MH",
+                              "id": "BCZF4",
                               "name": "Đặng Vô Danh",
                               "generation": 8,
                               "gender": null,
@@ -13929,7 +15624,7 @@
                               "children": []
                             },
                             {
-                              "id": "BCZF4",
+                              "id": "FL5MH",
                               "name": "Đặng Vô Danh",
                               "generation": 8,
                               "gender": null,
@@ -18310,8 +20005,1102 @@
                                   "generation": 9,
                                   "gender": "male",
                                   "is_deceased": true,
-                                  "phai": null,
-                                  "children": []
+                                  "phai": "Nhì",
+                                  "children": [
+                                    {
+                                      "id": "YIFIW",
+                                      "name": "Đặng Thị Cho(Chắc)",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "ABDKI",
+                                      "name": "Đặng Thị Hinh(Xia)",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "WXNPZ",
+                                      "name": "Đặng Thị Hàn",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "TYAI5",
+                                      "name": "Đặng Thị Hý(Kiên)",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "JXDHJ",
+                                      "name": "Đặng Thị Đinh(Nam)",
+                                      "generation": 10,
+                                      "gender": "female",
+                                      "is_deceased": true,
+                                      "phai": null,
+                                      "children": []
+                                    },
+                                    {
+                                      "id": "YJJAI",
+                                      "name": "Đặng Văn Hưng(Quyền)",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "ZNXVJ",
+                                          "name": "Đặng Thị Lập",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": false,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "ICOM2",
+                                          "name": "Đặng Thị Tái",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "TD2XL",
+                                          "name": "Đặng Văn Than",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "Q6PFE",
+                                              "name": "Đặng Thị Ca",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "T6F9N",
+                                              "name": "Đặng Thị Liên",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "IFENP",
+                                              "name": "Đặng Thị Nga",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "PEJHG",
+                                              "name": "Đặng Thị Nha",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "R1GKI",
+                                              "name": "Đặng Thị Ý",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "D2AGJ",
+                                              "name": "Đặng Văn Cư",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "T4BWO",
+                                              "name": "Đặng Văn Cừ",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "NYV5Y",
+                                              "name": "Đặng Văn Em",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "FYEAU",
+                                              "name": "Đặng Văn Hát",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "P2Q67",
+                                              "name": "Đặng Văn Kha",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "JSCOX",
+                                              "name": "Đặng Văn Long",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "ANOUT",
+                                              "name": "Đặng Văn Mười(Anh)",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "C626C",
+                                              "name": "Đặng Văn Mười(em)",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "MQTTD",
+                                              "name": "Đặng Văn Rê",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "TYQBP",
+                                              "name": "Đặng Văn Xê",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "S3VBL",
+                                          "name": "Đặng Văn Thi",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "NPHJ4",
+                                              "name": "Đặng Thị Chuối(C)",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "VJKZZ",
+                                              "name": "Đặng Thị Cưng",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "K0D2W",
+                                              "name": "Đặng Thị Diên",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "PEBQ2",
+                                              "name": "Đặng Thị Diệm",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "DO1R8",
+                                              "name": "Đặng Thị Dung",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "P6A41",
+                                              "name": "Đặng Thị Dân",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "AS5EX",
+                                              "name": "Đặng Thị Giai(C)",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "I6D1O",
+                                              "name": "Đặng Thị Mật",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "TU79A",
+                                              "name": "Đặng Thị Trụ",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "F0S53",
+                                              "name": "Đặng Thị Đàn (C)",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "W1820",
+                                              "name": "Đặng Thị Đây(C)",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "TADOI",
+                                              "name": "Đặng Văn Văn",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "ID2F2",
+                                      "name": "Đặng Văn Hươn(DânI",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "OJXPA",
+                                          "name": "Đặng Thị Dần",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "E0AFQ",
+                                          "name": "Đặng Thị Sửu(Lớn)",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "WVNHD",
+                                          "name": "Đặng Thị Sửu(Nhỏ)",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "E5UV0",
+                                          "name": "Đặng Thị Đâu",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "YK28C",
+                                          "name": "Đặng Văn Chính",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "I38LL",
+                                              "name": "Đặng Thị Chạy(C)",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "OP20C",
+                                              "name": "Đặng Thị Thu",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "KT1BY",
+                                              "name": "Đặng Thị Xung",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "RSKFS",
+                                              "name": "Đặng Thị Đi(C)",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "LX55V",
+                                              "name": "Đặng Văn Đáng",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "IZEU1",
+                                          "name": "Đặng Văn Tâm",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "SJF80",
+                                              "name": "Đặng Thị Diện(C)",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "XJ5OQ",
+                                              "name": "Đặng Thị Hoan",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "DOBNR",
+                                              "name": "Đặng Thị Liên",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "HQAT1",
+                                              "name": "Đặng Thị Lòng",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "SK9KT",
+                                              "name": "Đặng Văn Bé(C)",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "YHR4N",
+                                              "name": "Đặng Văn Cu(C)",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "ZUX6M",
+                                              "name": "Đặng Văn Láo",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "JN18Z",
+                                              "name": "Đặng Văn Láo(EmC)",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "F4KAP",
+                                      "name": "Đặng Văn Ninh(Tửu)",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "AMI3S",
+                                          "name": "Đặng Thị Dung",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "FTM13",
+                                          "name": "Đặng Thị Tưụ",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "WSPRY",
+                                          "name": "Đặng Thị Tửu",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "NDI9H",
+                                          "name": "Đặng Văn Truyền",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "ICVWL",
+                                              "name": "Đặng Thị Dương",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "K4TL1",
+                                              "name": "Đặng Thị Liên",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "NXEA2",
+                                              "name": "Đặng Thị My",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "PN6E5",
+                                              "name": "Đặng Văn Dưng",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "VIENH",
+                                              "name": "Đặng Văn Phương",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "QDAPM",
+                                              "name": "Đặng Văn Thống",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "ISIDM",
+                                              "name": "Đặng Văn Tùng",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "H5QVL",
+                                              "name": "Đặng Văn Tú",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "KET64",
+                                          "name": "Đặng Văn Truyện",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "YD95Q",
+                                          "name": "Đặng Văn Tề",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "D5EAC",
+                                              "name": "Đặng Thị Bơ",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "H425I",
+                                              "name": "Đặng Thị Thu",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "E4R7X",
+                                              "name": "Đặng Thị Thậm",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "M29RT",
+                                              "name": "Đặng Thị Tỉnh",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "KMBRN",
+                                              "name": "Đặng Văn Chỉnh",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "JRWEW",
+                                              "name": "Đặng Văn Thiện",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "PHPL7",
+                                              "name": "Đặng Văn Thuộc",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "F1TZF",
+                                              "name": "Đặng Văn Thành",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "HWARL",
+                                              "name": "Đặng Văn Thức",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "YXSS9",
+                                              "name": "Đặng Văn Đốn",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "id": "B3QD7",
+                                      "name": "Đặng Văn Tý(Định)",
+                                      "generation": 10,
+                                      "gender": "male",
+                                      "is_deceased": true,
+                                      "phai": "Nhì",
+                                      "children": [
+                                        {
+                                          "id": "RPZCP",
+                                          "name": "Đặng Thị Dư",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "RNEQQ",
+                                          "name": "Đặng Thị Dạ",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "WHJNP",
+                                          "name": "Đặng Thị Dỳ",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "RMM0O",
+                                          "name": "Đặng Thị Kiết",
+                                          "generation": 11,
+                                          "gender": "female",
+                                          "is_deceased": true,
+                                          "phai": null,
+                                          "children": []
+                                        },
+                                        {
+                                          "id": "T4CC8",
+                                          "name": "Đặng Văn Bé",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": true,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "FRJH7",
+                                              "name": "Đặng Thị Thương",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "FDB84",
+                                              "name": "Đặng Thị Vân",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "C5SLV",
+                                              "name": "Đặng Văn Chinh",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "GRPX3",
+                                              "name": "Đặng Văn Chỉnh",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "B8P2K",
+                                              "name": "Đặng Văn Dũng",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "UYF61",
+                                              "name": "Đặng Văn Tuấn",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "FMZAJ",
+                                          "name": "Đặng Văn Duy",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "TFTYJ",
+                                              "name": "Đặng Thị Hoa",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "NM58K",
+                                              "name": "Đặng Thị Hà",
+                                              "generation": 12,
+                                              "gender": null,
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "J8RNM",
+                                              "name": "Đặng Thị Liên",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "KSL56",
+                                              "name": "Đặng Thị Nường",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "S2Z7T",
+                                              "name": "Đặng Văn A",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "E1O12",
+                                              "name": "Đặng Văn Bê",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "RNC3S",
+                                              "name": "Đặng Văn Hùng",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "PYNLI",
+                                              "name": "Đặng Văn Lâm",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "ZTL2E",
+                                              "name": "Đặng Văn Mạnh",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "QB1YE",
+                                              "name": "Đặng Văn Ngọ",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "Y5B6U",
+                                              "name": "Đặng Văn Sơn",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "TGNYQ",
+                                              "name": "Đặng Văn Trung",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "M4G79",
+                                              "name": "Đặng Văn Tây",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "JJ8S4",
+                                              "name": "Đặng Văn Ánh",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "PCAS3",
+                                          "name": "Đặng Văn Dựa",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": [
+                                            {
+                                              "id": "TGBYM",
+                                              "name": "Đặng Thị Hạnh",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "FFVO4",
+                                              "name": "Đặng Thị Nguyệt",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "WVJLU",
+                                              "name": "Đặng Thị Phương",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "ENZGQ",
+                                              "name": "Đặng Thị Phượng",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "BZ0H3",
+                                              "name": "Đặng Thị Thúy",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "HBGKR",
+                                              "name": "Đặng Thị Yến",
+                                              "generation": 12,
+                                              "gender": "female",
+                                              "is_deceased": false,
+                                              "phai": null,
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "JEE1O",
+                                              "name": "Đặng Văn Minh",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "X5UKJ",
+                                              "name": "Đặng Văn Trương",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            },
+                                            {
+                                              "id": "OCSO0",
+                                              "name": "Đặng Văn Đức(Đích)",
+                                              "generation": 12,
+                                              "gender": "male",
+                                              "is_deceased": false,
+                                              "phai": "Nhì",
+                                              "children": []
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "MG41O",
+                                          "name": "Đặng Văn Định",
+                                          "generation": 11,
+                                          "gender": "male",
+                                          "is_deceased": false,
+                                          "phai": "Nhì",
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
                                 },
                                 {
                                   "id": "RURMI",
@@ -18319,7 +21108,7 @@
                                   "generation": 9,
                                   "gender": "male",
                                   "is_deceased": true,
-                                  "phai": null,
+                                  "phai": "Nhì",
                                   "children": []
                                 }
                               ]
@@ -27294,7 +30083,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "LYE7T",
+                                          "id": "XE030",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -27303,7 +30092,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "XE030",
+                                          "id": "LYE7T",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -27440,7 +30229,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "X7INR",
+                                          "id": "EI2TS",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
@@ -27449,7 +30238,7 @@
                                           "children": []
                                         },
                                         {
-                                          "id": "EI2TS",
+                                          "id": "X7INR",
                                           "name": "Đặng Vô Danh",
                                           "generation": 11,
                                           "gender": null,
